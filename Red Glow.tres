@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="FlarePreset" load_steps=16 format=3 uid="uid://yqu0ie18dscx"]
+
+[ext_resource type="Script" uid="uid://dmswtuayeoagf" path="res://addons/rokojori_action_library/Runtime/VFX/FlareVFX/FlareChromaticAberation/OrientatedFlareChromaticAberation.cs" id="1_il6n0"]
+[ext_resource type="Script" uid="uid://c67s0ccpomg2s" path="res://addons/rokojori_action_library/Runtime/VFX/FlareVFX/FlareFading/EdgeFlareFading.cs" id="2_tnpjv"]
+[ext_resource type="Script" uid="uid://u3g0mlwlpd6s" path="res://addons/rokojori_action_library/Runtime/VFX/FlareVFX/FlareLayer.cs" id="4_tbyny"]
+[ext_resource type="Script" uid="uid://bmcf4qxpqs8mb" path="res://addons/rokojori_action_library/Runtime/VFX/FlareVFX/FlareFading/ParametricFlareFading.cs" id="5_ewis6"]
+[ext_resource type="Script" uid="uid://0epjgkk6qmhy" path="res://addons/rokojori_action_library/Runtime/VFX/FlareVFX/FlareType/SDFShapeFlareType.cs" id="6_43gf1"]
+[ext_resource type="Script" uid="uid://bq2hh5ledvviu" path="res://addons/rokojori_action_library/Runtime/VFX/FlareVFX/FlareOcclusion/FadingFlareOcclusion.cs" id="7_3yrh0"]
+[ext_resource type="Script" uid="uid://bh37fg1dnc37s" path="res://addons/rokojori_action_library/Runtime/VFX/FlareVFX/FlarePreset.cs" id="8_rseyl"]
+
+[sub_resource type="Resource" id="Resource_d0dy2"]
+script = ExtResource("1_il6n0")
+orientation = 1
+amount = 21.0429
+smear = 30.8889
+offsetR = -0.3039
+offsetB = 0.1165
+metadata/_custom_type_script = "uid://dmswtuayeoagf"
+
+[sub_resource type="Resource" id="Resource_il6n0"]
+script = ExtResource("2_tnpjv")
+sizeAmount = 0.3216
+metadata/_custom_type_script = "uid://c67s0ccpomg2s"
+
+[sub_resource type="Resource" id="Resource_4qtqc"]
+script = ExtResource("5_ewis6")
+fading = 0.0
+opacity = 1.0
+sizeX = 0.0
+sizeY = 0.6289
+metadata/_custom_type_script = "uid://bmcf4qxpqs8mb"
+
+[sub_resource type="Resource" id="Resource_gwku0"]
+script = ExtResource("6_43gf1")
+shapeType = 0
+shapeOpacityBorderOffset = 0.0992
+shapeOpacityBorderSpread = 0.6013
+shapeOpacityDistribution = 3.1273
+shapeColorMappingInnerBorder = -0.5455
+shapeColorMappingOuterBorder = 0.1983
+outerOpacity = 0.0
+metadata/_custom_type_script = "uid://0epjgkk6qmhy"
+
+[sub_resource type="Curve" id="Curve_fy8er"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 1, Vector2(1, 1), 0.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ls5mq"]
+curve = SubResource("Curve_fy8er")
+
+[sub_resource type="Resource" id="Resource_8vqmt"]
+script = ExtResource("4_tbyny")
+layerName = "Big Glow"
+opacity = 0.01
+flareType = SubResource("Resource_gwku0")
+opacityCurvePerLayer = SubResource("CurveTexture_ls5mq")
+temparatureShift = 8.4706
+saturationShift = -68.8168
+size = 1000.0
+sizeScale = 0.0495
+sizeYScale = 0.5976
+screenSizeScale = 0.616
+fading = SubResource("Resource_4qtqc")
+metadata/_custom_type_script = "uid://u3g0mlwlpd6s"
+
+[sub_resource type="Resource" id="Resource_tnpjv"]
+script = ExtResource("7_3yrh0")
+zOffset = 0.5785
+toSize = 0.0
+
+[resource]
+script = ExtResource("8_rseyl")
+mainColor = Color(5.1105056, 0, 0, 1)
+scale = 0.423
+layers = [SubResource("Resource_8vqmt")]
+fading = SubResource("Resource_il6n0")
+chromaticAberation = SubResource("Resource_d0dy2")
+occlusion = SubResource("Resource_tnpjv")
+metadata/_custom_type_script = "uid://bh37fg1dnc37s"

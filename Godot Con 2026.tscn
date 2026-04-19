@@ -1,0 +1,1622 @@
+[gd_scene load_steps=185 format=3 uid="uid://b6flmwnhw86cn"]
+
+[ext_resource type="Script" uid="uid://bgw3wuqxbwrb0" path="res://addons/rokojori_action_library/Runtime/Rendering/Compositor/CompositorEffects/AntiAliasing/FXAA/FXAAEffect.cs" id="1_vp1l6"]
+[ext_resource type="Script" uid="uid://chqp2otobal7a" path="res://addons/rokojori_action_library/Runtime/Rendering/Compositor/CompositorEffectReferences/CompositorEffectLayerSlot.cs" id="2_1h2nm"]
+[ext_resource type="Script" uid="uid://bgiluy6xgcvb0" path="res://addons/rokojori_action_library/Runtime/Rendering/Compositor/CompositorEffects/Overlay/Vignette/VignetteEffect.cs" id="2_rggnn"]
+[ext_resource type="Script" uid="uid://dvvfvlutisecy" path="res://addons/rokojori_action_library/Runtime/Rendering/Compositor/AnimationTargets/CompFXMemberCurveTarget.cs" id="3_tvrwb"]
+[ext_resource type="Script" uid="uid://b4yjsis2fh64c" path="res://addons/rokojori_action_library/Runtime/Actions/ActionList.cs" id="4_fiwbu"]
+[ext_resource type="Script" uid="uid://cx5qcow1mmd11" path="res://addons/rokojori_action_library/Runtime/Rendering/Compositor/CompositorEffectReferences/CompositorEffectOwner.cs" id="4_gc2ks"]
+[ext_resource type="Script" uid="uid://comuvej4dr22k" path="res://addons/rokojori_action_library/Runtime/Rendering/Compositor/CompositorEffectReferences/RokojoriCompositorEffectID.cs" id="5_f60al"]
+[ext_resource type="Script" uid="uid://bnhnintao4qu0" path="res://addons/rokojori_action_library/Runtime/Animation/Shake/Shake.cs" id="5_wsd6q"]
+[ext_resource type="Script" uid="uid://ddgf2mfdmqywc" path="res://addons/rokojori_action_library/Runtime/Actions/Node3D/PlaySound.cs" id="7_vbfsi"]
+[ext_resource type="Script" uid="uid://b64ylf5cx2514" path="res://addons/rokojori_action_library/Runtime/Cameras/CameraManager.cs" id="8_71nkg"]
+[ext_resource type="Script" uid="uid://dnstanbmrqthf" path="res://addons/rokojori_action_library/Runtime/Actions/Node3D/PlayParticles.cs" id="8_843m0"]
+[ext_resource type="Script" uid="uid://dn7xg8cqdnolq" path="res://addons/rokojori_action_library/Runtime/Rendering/Compositor/CompositorEffectReferences/CompositorEffectLayout.cs" id="9_37xqx"]
+[ext_resource type="Script" uid="uid://cdweilvlwjucr" path="res://addons/rokojori_action_library/Runtime/Time/TimeLineManager.cs" id="9_w3xg1"]
+[ext_resource type="Resource" uid="uid://ch5nsa6yafs5l" path="res://addons/rokojori_action_library/Runtime/Time/TimeLines/GameTime.tres" id="11_ir4gp"]
+[ext_resource type="Resource" uid="uid://h6oi6vkj4c2m" path="res://addons/rokojori_action_library/Runtime/Time/TimeLines/RealTime.tres" id="12_1h2nm"]
+[ext_resource type="AudioStream" uid="uid://cd7ogjj1uyabf" path="res://count.ogg" id="12_ip7kd"]
+[ext_resource type="Resource" uid="uid://b0cwrx25ct7ht" path="res://PostFX-Compositor-Layer.tres" id="13_1h2nm"]
+[ext_resource type="Script" uid="uid://cebnf3dtch0oh" path="res://addons/rokojori_action_library/Runtime/Rendering/Compositor/CompositorEffectReferences/CompositorVFX.cs" id="13_4e8bw"]
+[ext_resource type="AudioStream" uid="uid://deiff7lsxoaci" path="res://swish.ogg" id="13_ovegg"]
+[ext_resource type="Resource" uid="uid://dx1yhdxjvueve" path="res://addons/rokojori_action_library/Runtime/Rendering/Compositor/CompositorVFXPresets/Physical/Impact Wave.tres" id="14_nobls"]
+[ext_resource type="AudioStream" uid="uid://4wlep3y14yc8" path="res://hit-impact-big.ogg" id="14_sumyk"]
+[ext_resource type="AudioStream" uid="uid://ckbgw6xqs0bsj" path="res://hit-impact-punch.ogg" id="15_0tto5"]
+[ext_resource type="Script" uid="uid://wo6881tihorq" path="res://addons/rokojori_action_library/Runtime/VFX/FlareVFX/FlareVFX.cs" id="15_22le1"]
+[ext_resource type="Resource" uid="uid://c51155ys7wme8" path="res://addons/rokojori_action_library/Runtime/Rendering/Compositor/CompositorVFXPresets/Screen/Analog Tube TV .tres" id="15_37xqx"]
+[ext_resource type="Resource" uid="uid://bm68c08jkccka" path="res://Red Flare.tres" id="16_msfts"]
+[ext_resource type="Script" uid="uid://bec6skfqkb2ci" path="res://addons/rokojori_action_library/Runtime/Animation/Shake/ShakeEffect.cs" id="17_71nkg"]
+[ext_resource type="ArrayMesh" uid="uid://du6qe7rf1jutc" path="res://.rokojori/cache/MeshGeneratorType/UnitBillboardQuadsGenerator-1.tres" id="17_78ruu"]
+[ext_resource type="Script" uid="uid://di737cq62huln" path="res://addons/rokojori_action_library/Runtime/Actions/Visual/TweenCompositorVFX.cs" id="17_ip7kd"]
+[ext_resource type="AudioStream" uid="uid://dxgd2h1fmfpbf" path="res://hit-impact-retro.ogg" id="17_ir4gp"]
+[ext_resource type="Script" uid="uid://c5tm02yj1bhhx" path="res://addons/rokojori_action_library/Runtime/Animation/AnimationCurve.cs" id="18_37xqx"]
+[ext_resource type="Script" uid="uid://d1iq626el78ug" path="res://addons/rokojori_action_library/Runtime/Shading/Shaders/Flares/TextureType/Variants/TextureTypeFlareAddMaterial.cs" id="18_spr4w"]
+[ext_resource type="Script" uid="uid://ddhwhwos5kkrm" path="res://addons/rokojori_action_library/Runtime/Time/Duration/SecondsDuration.cs" id="18_yaa7g"]
+[ext_resource type="Script" uid="uid://fqm54rn8fnnl" path="res://addons/rokojori_action_library/Runtime/Time/TimeLine.cs" id="19_ir4gp"]
+[ext_resource type="Shader" uid="uid://djs7lam1b5b54" path="res://addons/rokojori_action_library/Runtime/Shading/Shaders/Flares/TextureType/Variants/TextureTypeFlareAdd.gdshader" id="19_x2ntx"]
+[ext_resource type="Script" uid="uid://pitbnp6cpk4f" path="res://addons/rokojori_action_library/Runtime/Shading/Shaders/Flares/SDFType/Variants/SDFTypeFlareAddMaterial.cs" id="20_rm2eb"]
+[ext_resource type="Shader" uid="uid://bghg0b1pecnwd" path="res://addons/rokojori_action_library/Runtime/Shading/Shaders/Flares/SDFType/Variants/SDFTypeFlareAdd.gdshader" id="21_fcl2o"]
+[ext_resource type="ArrayMesh" uid="uid://nn33ws3tolbu" path="res://.rokojori/cache/MeshGeneratorType/UnitBillboardQuadsGenerator-8.tres" id="22_ttr13"]
+[ext_resource type="ArrayMesh" uid="uid://csu55hu28dao0" path="res://.rokojori/cache/MeshGeneratorType/UnitBillboardQuadsGenerator-7.tres" id="23_0g18k"]
+[ext_resource type="Script" uid="uid://dnwqkymbre3vb" path="res://addons/rokojori_action_library/Runtime/Animation/Flash/Flash.cs" id="23_8m2ox"]
+[ext_resource type="Script" uid="uid://cc3jq0uc5ukxw" path="res://addons/rokojori_action_library/Runtime/Shading/Shaders/Flares/EllipseType/Variants/EllipseTypeFlareAddMaterial.cs" id="24_1r0kr"]
+[ext_resource type="Resource" uid="uid://bfxwx0fiejnk3" path="res://addons/rokojori_action_library/Runtime/Animation/Flash/Presets/Blue Shield - Flash.tres" id="24_4eobf"]
+[ext_resource type="Script" uid="uid://ceaglilesxsi4" path="res://addons/rokojori_action_library/Runtime/Actions/ActionSequence.cs" id="25_1h2nm"]
+[ext_resource type="Shader" uid="uid://bbb3acmgbp5p0" path="res://addons/rokojori_action_library/Runtime/Shading/Shaders/Flares/EllipseType/Variants/EllipseTypeFlareAdd.gdshader" id="25_7jx0u"]
+[ext_resource type="Script" uid="uid://b2g7rycr0ouu4" path="res://addons/rokojori_action_library/Runtime/Actions/Time/Delay.cs" id="28_4e8bw"]
+[ext_resource type="Resource" uid="uid://d06w8jorebto2" path="res://addons/rokojori_action_library/Runtime/Animation/Flash/Presets/Orange Boost - Flash.tres" id="29_nobls"]
+[ext_resource type="Script" uid="uid://cnp3xr8gawyi6" path="res://addons/rokojori_action_library/Runtime/Actions/Node3D/SetTransform.cs" id="30_yaa7g"]
+[ext_resource type="Script" uid="uid://j41ppn275x8i" path="res://addons/rokojori_action_library/Runtime/Actions/Sequence/RepeatSequence.cs" id="31_8m2ox"]
+[ext_resource type="Script" uid="uid://dy65lu5p2yf3j" path="res://addons/rokojori_action_library/Runtime/Actions/Sequence/Parallel.cs" id="32_4eobf"]
+[ext_resource type="Resource" uid="uid://cwdnm658q3jta" path="res://addons/rokojori_action_library/Runtime/Animation/Flash/Presets/Red Hit - Flash.tres" id="33_geea8"]
+[ext_resource type="Resource" uid="uid://pok7bfoksfmr" path="res://addons/rokojori_action_library/Runtime/Animation/Flash/Presets/White Blinking - Flash.tres" id="34_g3cwa"]
+[ext_resource type="Script" uid="uid://0wcfunmv4j6d" path="res://addons/rokojori_action_library/Runtime/Actions/Visual/TweenMaterial.cs" id="43_msfts"]
+[ext_resource type="Script" uid="uid://lm37r3ycp1ls" path="res://addons/rokojori_action_library/Runtime/Animation/Tweens/TweenTimeCurve.cs" id="44_78ruu"]
+[ext_resource type="Script" uid="uid://dm4i0s67kio5v" path="res://addons/rokojori_action_library/Runtime/Actions/Visual/TweenFloat.cs" id="45_6edtt"]
+[ext_resource type="Script" uid="uid://cbtqgliarexam" path="res://addons/rokojori_action_library/Runtime/Animation/Transform/AnimateTransform.cs" id="47_7jx0u"]
+[ext_resource type="Script" uid="uid://be4oc7tgr55vu" path="res://addons/rokojori_action_library/Runtime/Animation/Transform/TransformCurve.cs" id="48_udnlj"]
+[ext_resource type="Script" uid="uid://bqpiwp16h7614" path="res://addons/rokojori_action_library/Runtime/Animation/Transform/TransformAnimations.cs" id="49_tl24h"]
+[ext_resource type="Script" uid="uid://6jkixa201wux" path="res://addons/rokojori_action_library/Runtime/Rendering/Compositor/CompositorEffects/Glow/ChromaticBloom/ChromaticBloomEffect.cs" id="51_udnlj"]
+[ext_resource type="Script" uid="uid://ckixweetchlo0" path="res://addons/rokojori_action_library/Runtime/Rendering/Compositor/CompositorEffectReferences/CompositorVFXPreset.cs" id="52_tl24h"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n8g31"]
+
+[sub_resource type="Sky" id="Sky_x7iov"]
+sky_material = SubResource("ProceduralSkyMaterial_n8g31")
+
+[sub_resource type="Environment" id="Environment_tvrwb"]
+background_mode = 2
+sky = SubResource("Sky_x7iov")
+tonemap_mode = 2
+tonemap_exposure = 1.2
+ssao_enabled = true
+ssao_radius = 1.08
+ssao_intensity = 4.06
+ssao_detail = 1.45
+ssao_horizon = 0.11
+ssao_sharpness = 1.0
+ssao_light_affect = 1.0
+ssao_ao_channel_affect = 1.0
+glow_enabled = true
+glow_levels/1 = 16.0
+glow_levels/2 = 2.59
+glow_levels/3 = 0.76
+glow_levels/4 = 0.62
+glow_levels/5 = 0.37
+glow_levels/6 = 0.31
+glow_intensity = 1.83
+glow_strength = 1.22
+glow_blend_mode = 4
+fog_enabled = true
+fog_light_color = Color(0.3166403, 0.3671382, 0.4456907, 1)
+adjustment_enabled = true
+adjustment_contrast = 0.9
+adjustment_saturation = 1.2
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_gc2ks"]
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_0tto5"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("2_1h2nm")
+layer = ExtResource("13_1h2nm")
+metadata/_custom_type_script = "uid://chqp2otobal7a"
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_f60al"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("1_vp1l6")
+amount = 1.5
+metadata/_custom_type_script = "uid://bgw3wuqxbwrb0"
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_dncpf"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("2_rggnn")
+fadePosition = 0.3447
+fadeInOffset = 0.0505
+fadeOutOffset = 0.263
+ellipseToCircle = 0.9574
+colorTop = Color(0.30312884, 0.21137035, 0.23787837, 1)
+colorBottom = Color(0.09725514, 0, 0.19451028, 1)
+replace = 0.2
+multiply = 0.6
+colorize = 0.2
+metadata/_custom_type_script = "uid://bgiluy6xgcvb0"
+
+[sub_resource type="Compositor" id="Compositor_71nkg"]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_0tto5"), SubResource("CompositorEffect_f60al"), SubResource("CompositorEffect_dncpf")])
+
+[sub_resource type="Resource" id="Resource_t7wop"]
+script = ExtResource("9_37xqx")
+compositor = SubResource("Compositor_71nkg")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_37xqx"]
+size = Vector2(1000, 1000)
+
+[sub_resource type="Gradient" id="Gradient_37xqx"]
+offsets = PackedFloat32Array(0.97938144, 1)
+colors = PackedColorArray(0.12712638, 0.17148876, 0.20129895, 1, 0.45247936, 0.45247936, 0.45247936, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ir4gp"]
+gradient = SubResource("Gradient_37xqx")
+width = 1024
+height = 1024
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_1h2nm"]
+offsets = PackedFloat32Array(0, 0.9862543)
+colors = PackedColorArray(0, 0, 0, 1, 0.18258123, 0.14521459, 0.26918554, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4e8bw"]
+frequency = 0.0017
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nobls"]
+width = 2048
+height = 2048
+noise = SubResource("FastNoiseLite_4e8bw")
+color_ramp = SubResource("Gradient_1h2nm")
+seamless = true
+
+[sub_resource type="Gradient" id="Gradient_0tto5"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.2148763, 0.2148763, 0.2148763, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ip7kd"]
+gradient = SubResource("Gradient_0tto5")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_yaa7g"]
+frequency = 0.0111
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8m2ox"]
+noise = SubResource("FastNoiseLite_yaa7g")
+seamless = true
+as_normal_map = true
+bump_strength = 32.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_yunny"]
+noise_type = 2
+frequency = 0.0024
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pfqol"]
+width = 1024
+height = 1024
+noise = SubResource("FastNoiseLite_yunny")
+seamless = true
+as_normal_map = true
+seamless_blend_skirt = 0.4
+bump_strength = 14.6
+
+[sub_resource type="Gradient" id="Gradient_ir4gp"]
+offsets = PackedFloat32Array(0.5395189, 0.9656357, 1)
+colors = PackedColorArray(0.16056699, 0.15948132, 0.15948132, 1, 0.37101543, 0.37101543, 0.37101543, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1h2nm"]
+gradient = SubResource("Gradient_ir4gp")
+width = 1024
+height = 1024
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_802yv"]
+albedo_color = Color(0.62488157, 0.6231121, 0.6357732, 1)
+albedo_texture = SubResource("GradientTexture2D_ir4gp")
+metallic = 0.11
+metallic_specular = 0.25
+roughness_texture = SubResource("GradientTexture2D_1h2nm")
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_pfqol")
+ao_enabled = true
+ao_light_affect = 1.0
+detail_enabled = true
+detail_mask = SubResource("GradientTexture1D_ip7kd")
+detail_uv_layer = 1
+detail_albedo = SubResource("NoiseTexture2D_nobls")
+detail_normal = SubResource("NoiseTexture2D_8m2ox")
+uv1_scale = Vector3(200, 200, 1)
+uv2_scale = Vector3(0.01, 1, 0.01)
+uv2_offset = Vector3(0.2745, 0, 0)
+uv2_triplanar = true
+texture_filter = 5
+
+[sub_resource type="BoxMesh" id="BoxMesh_37xqx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ir4gp"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1h2nm"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_71nkg"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_37xqx"]
+width = 1024
+height = 1024
+noise = SubResource("FastNoiseLite_71nkg")
+seamless = true
+as_normal_map = true
+bump_strength = 9.4
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_37xqx"]
+frequency = 0.0071
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ir4gp"]
+width = 1024
+height = 1024
+noise = SubResource("FastNoiseLite_37xqx")
+seamless = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rovp1"]
+albedo_color = Color(0.8122784, 0.20314468, 0.23703761, 1)
+metallic = 0.72
+metallic_specular = 0.65
+roughness_texture = SubResource("NoiseTexture2D_ir4gp")
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_37xqx")
+ao_enabled = true
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 1.0
+subsurf_scatter_transmittance_enabled = true
+subsurf_scatter_transmittance_depth = 4.074
+subsurf_scatter_transmittance_boost = 0.15
+backlight_enabled = true
+backlight = Color(0.42532474, 0.24085087, 0.04203598, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_x2ntx"]
+
+[sub_resource type="Gradient" id="Gradient_rm2eb"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fcl2o"]
+gradient = SubResource("Gradient_rm2eb")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6edtt"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_color = Color(2.4246898, 0, 0, 0)
+albedo_texture = SubResource("GradientTexture2D_fcl2o")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="Gradient" id="Gradient_4e8bw"]
+offsets = PackedFloat32Array(0.75555557, 0.8055556)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7jx0u"]
+gradient = SubResource("Gradient_4e8bw")
+fill = 2
+fill_from = Vector2(0.517094, 0.46153846)
+fill_to = Vector2(1, 0.47008547)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0tto5"]
+transparency = 2
+alpha_scissor_threshold = 0.461
+alpha_antialiasing_mode = 0
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("GradientTexture2D_7jx0u")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="Gradient" id="Gradient_yaa7g"]
+offsets = PackedFloat32Array(0, 0.2902299, 0.6321839, 1)
+colors = PackedColorArray(1, 0.39477575, 0.5490731, 1, 1, 0, 0.8605423, 1, 0.5297308, 0, 1, 1, 0.39477575, 0.80634, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8m2ox"]
+gradient = SubResource("Gradient_yaa7g")
+
+[sub_resource type="Gradient" id="Gradient_ip7kd"]
+offsets = PackedFloat32Array(0.0028735632, 0.03735632, 0.112068966, 0.48563218, 0.6308244)
+colors = PackedColorArray(0.31670618, 0.056294765, 0.09362639, 1, 2.2353005, 15.642288, 18.892157, 1, 0, 1.6408896, 4.415934, 1, 0.6561392, 0.5956064, 0.6512719, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yaa7g"]
+gradient = SubResource("Gradient_ip7kd")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_8m2ox"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.06842105, 1), 0.0, 0.0, 0, 0, Vector2(0.6141479, 1), 0.057935834, 0.057935834, 0, 0, Vector2(0.7138264, 0.07377052), -0.48227784, -0.48227784, 0, 0, Vector2(1, 0), -0.1860417, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_4eobf"]
+curve = SubResource("Curve_8m2ox")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_geea8"]
+lifetime_randomness = 1.0
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 15.0
+gravity = Vector3(0, -10, 0)
+damping_min = 12.000001
+damping_max = 22.000002
+scale_min = 0.19999999
+scale_max = 0.39999998
+scale_curve = SubResource("CurveTexture_4eobf")
+color_ramp = SubResource("GradientTexture1D_yaa7g")
+color_initial_ramp = SubResource("GradientTexture1D_8m2ox")
+
+[sub_resource type="QuadMesh" id="QuadMesh_g3cwa"]
+
+[sub_resource type="Gradient" id="Gradient_71nkg"]
+offsets = PackedFloat32Array(0.6722408, 0.75555557, 0.8055556)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_37xqx"]
+gradient = SubResource("Gradient_71nkg")
+width = 256
+height = 256
+fill = 2
+fill_from = Vector2(0.517094, 0.46153846)
+fill_to = Vector2(1, 0.47008547)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ir4gp"]
+transparency = 2
+alpha_scissor_threshold = 0.461
+alpha_antialiasing_mode = 0
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("GradientTexture2D_37xqx")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1h2nm"]
+lifetime_randomness = 1.0
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 15.0
+gravity = Vector3(0, -10, 0)
+damping_min = 18.0
+damping_max = 22.000002
+scale_min = 0.39999998
+scale_curve = SubResource("CurveTexture_4eobf")
+color_ramp = SubResource("GradientTexture1D_yaa7g")
+color_initial_ramp = SubResource("GradientTexture1D_8m2ox")
+
+[sub_resource type="Gradient" id="Gradient_udnlj"]
+offsets = PackedFloat32Array(0.8877551, 0.9285714)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tl24h"]
+gradient = SubResource("Gradient_udnlj")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.517094, 0.46153846)
+fill_to = Vector2(1, 0.47008547)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0mvb"]
+transparency = 2
+alpha_scissor_threshold = 0.461
+alpha_antialiasing_mode = 0
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("GradientTexture2D_tl24h")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="Gradient" id="Gradient_aqpfh"]
+offsets = PackedFloat32Array(0.0028735632, 0.03735632, 0.17528735, 0.5344828, 1)
+colors = PackedColorArray(0.31670618, 0.056294765, 0.09362639, 1, 18.892157, 13.943095, 2.2353005, 1, 3.2751656, 0.24845618, 0, 1, 0.65968734, 0.108666964, 0.17303891, 1, 0.24203093, 0.24203093, 0.24203093, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ipngd"]
+gradient = SubResource("Gradient_aqpfh")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_gc2ks"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.071052626, 1), 0.285002, 0.285002, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_f60al"]
+curve = SubResource("Curve_gc2ks")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_22le1"]
+lifetime_randomness = 1.0
+spread = 180.0
+initial_velocity_min = 0.099999994
+initial_velocity_max = 12.0
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 9.49949e-08
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = -2.2351742e-05
+gravity = Vector3(0, -10, 0)
+radial_accel_min = -2.2351742e-06
+radial_accel_max = -2.2351742e-06
+damping_min = 5.0
+damping_max = 5.0
+scale_min = 0.049999997
+scale_max = 0.19999999
+scale_curve = SubResource("CurveTexture_f60al")
+color_ramp = SubResource("GradientTexture1D_ipngd")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_t7wop"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rovp1"]
+width = 1024
+height = 1024
+noise = SubResource("FastNoiseLite_t7wop")
+seamless = true
+as_normal_map = true
+bump_strength = 9.4
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_aqpfh"]
+frequency = 0.0071
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ipngd"]
+width = 1024
+height = 1024
+noise = SubResource("FastNoiseLite_aqpfh")
+seamless = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ovegg"]
+albedo_color = Color(0.8122784, 0.20314468, 0.23703761, 1)
+metallic = 0.72
+metallic_specular = 0.65
+roughness_texture = SubResource("NoiseTexture2D_ipngd")
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_rovp1")
+ao_enabled = true
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 1.0
+subsurf_scatter_transmittance_enabled = true
+subsurf_scatter_transmittance_depth = 4.074
+subsurf_scatter_transmittance_boost = 0.15
+backlight_enabled = true
+backlight = Color(0.42532474, 0.24085087, 0.04203598, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sumyk"]
+lifetime_randomness = 0.64
+spread = 180.0
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 9.49949e-08
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = -2.2351742e-05
+gravity = Vector3(0, -10, 0)
+radial_accel_min = -2.2351742e-06
+radial_accel_max = -2.2351742e-06
+scale_min = 0.7
+scale_max = 1.1
+scale_curve = SubResource("CurveTexture_f60al")
+color_ramp = SubResource("GradientTexture1D_ipngd")
+
+[sub_resource type="SphereMesh" id="SphereMesh_22le1"]
+
+[sub_resource type="Curve" id="Curve_a4g6s"]
+_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_xxny3"]
+curve = SubResource("Curve_a4g6s")
+
+[sub_resource type="Gradient" id="Gradient_ade2u"]
+offsets = PackedFloat32Array(0, 0.4732143, 0.59821427, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.0714286, 1, 1, 1, 0.008474581, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x0p8u"]
+gradient = SubResource("Gradient_ade2u")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.4957265)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7jx0u"]
+render_priority = 0
+shader = ExtResource("19_x2ntx")
+shader_parameter/texture = SubResource("GradientTexture2D_x0p8u")
+shader_parameter/textureUVScale = 4.0
+shader_parameter/textureRepeat = false
+shader_parameter/textureMaskUVScale = 4.0
+shader_parameter/textureMaskRepeat = false
+shader_parameter/color = Color(19.835745, 1.7819486, 2.5454335e-06, 1)
+shader_parameter/opacity = 0.0
+shader_parameter/opacityCurve = SubResource("CurveTexture_xxny3")
+shader_parameter/minHueRandom = 0.0
+shader_parameter/maxHueRandom = 0.0
+shader_parameter/shapeNoiseAmount = 0.0
+shader_parameter/shapeNoiseScale = 0.0
+shader_parameter/sizeX = 1.692
+shader_parameter/sizeY = 1.692
+shader_parameter/worldSizeScale = 1.0
+shader_parameter/screenSizeScale = 1.0
+shader_parameter/worldSize_vs_screenSize = 1.0
+shader_parameter/randomScaleMin = 0.6503
+shader_parameter/randomScaleMax = 2.0
+shader_parameter/extension = 1.0
+shader_parameter/rotation = 0.0
+shader_parameter/rotationOverX = 0.0
+shader_parameter/rotationOverY = 0.0
+shader_parameter/rotationPerLayer = 0.0
+shader_parameter/screenOffset = Vector2(0, 0)
+shader_parameter/screenOffsetScale = Vector2(0, 0)
+shader_parameter/screenOffsetLayerSpread = Vector2(0.153, 0.153)
+shader_parameter/chromaticAberationMode = 1
+shader_parameter/chromaticAberationAmount = 0.1917
+shader_parameter/chromaticAberationSteps = 4
+shader_parameter/chromaticAberationDirection = Vector2(1, 1)
+shader_parameter/chromaticAberationDirectionTowardsCenter = -1.0
+shader_parameter/chromaticAberationCenterScale = 1.0
+shader_parameter/chromaticAberationCenterOffset = 1.0
+shader_parameter/chromaticAberationShifts = Vector3(0.93922, 1, 1.0233)
+shader_parameter/chromaticAberationSmear = 42.1408
+shader_parameter/fadingMode = 1
+shader_parameter/fadingPower = 0.25728
+shader_parameter/opacityFadingPower = 0.8
+shader_parameter/sizeXfadingPower = 0.25728
+shader_parameter/sizeYfadingPower = 0.25728
+shader_parameter/occlusionMode = 1
+shader_parameter/occlusionZOffset = 0.5735
+shader_parameter/occlusionTestMaxSteps = 10
+shader_parameter/occlusionTestStepStride = 1.0
+shader_parameter/occlusionTest_ViewDependingScaleAmount = 0.5
+shader_parameter/occlusionTest_ViewDependingDistance = 100.0
+shader_parameter/occlusionToSize = 0.0
+script = ExtResource("18_spr4w")
+
+[sub_resource type="Curve" id="Curve_fy8er"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 1, Vector2(1, 1), 0.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ls5mq"]
+curve = SubResource("Curve_fy8er")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_udnlj"]
+render_priority = 0
+shader = ExtResource("21_fcl2o")
+shader_parameter/shapeType = 0
+shader_parameter/shapeScale = 0.5
+shader_parameter/minShapeDistance = -0.5021
+shader_parameter/maxShapeDistance = 0.80050004
+shader_parameter/minShapeDistanceColor = -0.5455
+shader_parameter/maxShapeDistanceColor = 0.1983
+shader_parameter/shapeColorDistortion = 1.0
+shader_parameter/shapeAlphaDistortion = 3.1273
+shader_parameter/innerHSL = Vector4(0, 0, 0, 1)
+shader_parameter/outerHSL = Vector4(0, 0, 0, 0)
+shader_parameter/color = Color(3.3520622, 2.1063764, 1.7584434, 1)
+shader_parameter/opacity = 0.0
+shader_parameter/opacityCurve = SubResource("CurveTexture_ls5mq")
+shader_parameter/minHueRandom = 0.0
+shader_parameter/maxHueRandom = 0.0
+shader_parameter/shapeNoiseAmount = 0.0
+shader_parameter/shapeNoiseScale = 0.0
+shader_parameter/sizeX = 20.9385
+shader_parameter/sizeY = 12.512848
+shader_parameter/worldSizeScale = 1.0
+shader_parameter/screenSizeScale = 0.616
+shader_parameter/worldSize_vs_screenSize = 1.0
+shader_parameter/randomScaleMin = 1.0
+shader_parameter/randomScaleMax = 1.0
+shader_parameter/extension = 1.0
+shader_parameter/rotation = 0.0
+shader_parameter/rotationOverX = 0.0
+shader_parameter/rotationOverY = 0.0
+shader_parameter/rotationPerLayer = 0.0
+shader_parameter/screenOffset = Vector2(0, 0)
+shader_parameter/screenOffsetScale = Vector2(0, 0)
+shader_parameter/screenOffsetLayerSpread = Vector2(0, 0)
+shader_parameter/chromaticAberationMode = 1
+shader_parameter/chromaticAberationAmount = 0.1917
+shader_parameter/chromaticAberationSteps = 4
+shader_parameter/chromaticAberationDirection = Vector2(1, 1)
+shader_parameter/chromaticAberationDirectionTowardsCenter = -1.0
+shader_parameter/chromaticAberationCenterScale = 1.0
+shader_parameter/chromaticAberationCenterOffset = 1.0
+shader_parameter/chromaticAberationShifts = Vector3(0.93922, 1, 1.0233)
+shader_parameter/chromaticAberationSmear = 42.1408
+shader_parameter/fadingMode = 1
+shader_parameter/fadingPower = 0.0
+shader_parameter/opacityFadingPower = 1.0
+shader_parameter/sizeXfadingPower = 0.0
+shader_parameter/sizeYfadingPower = 0.6289
+shader_parameter/occlusionMode = 1
+shader_parameter/occlusionZOffset = 0.5735
+shader_parameter/occlusionTestMaxSteps = 10
+shader_parameter/occlusionTestStepStride = 1.0
+shader_parameter/occlusionTest_ViewDependingScaleAmount = 0.5
+shader_parameter/occlusionTest_ViewDependingDistance = 100.0
+shader_parameter/occlusionToSize = 0.0
+script = ExtResource("20_rm2eb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tl24h"]
+render_priority = 0
+shader = ExtResource("21_fcl2o")
+shader_parameter/shapeType = 5
+shader_parameter/shapeScale = 0.2565
+shader_parameter/minShapeDistance = 0.059299998
+shader_parameter/maxShapeDistance = 0.1536
+shader_parameter/minShapeDistanceColor = -0.17850003
+shader_parameter/maxShapeDistanceColor = 0.5536
+shader_parameter/shapeColorDistortion = 1.0
+shader_parameter/shapeAlphaDistortion = 2.8562
+shader_parameter/innerHSL = Vector4(0, 0, 0, 0)
+shader_parameter/outerHSL = Vector4(0, 0, 0, 1)
+shader_parameter/color = Color(1.3148649, 0.958567, 0.9233999, 1)
+shader_parameter/opacity = 0.0
+shader_parameter/minHueRandom = -0.12719306
+shader_parameter/maxHueRandom = 0.14912306
+shader_parameter/shapeNoiseAmount = 0.0
+shader_parameter/shapeNoiseScale = 0.0
+shader_parameter/sizeX = 1.8131895
+shader_parameter/sizeY = 1.8131895
+shader_parameter/worldSizeScale = 1.0
+shader_parameter/screenSizeScale = 1.0
+shader_parameter/worldSize_vs_screenSize = 1.0
+shader_parameter/randomScaleMin = 0.4474
+shader_parameter/randomScaleMax = 1.193
+shader_parameter/extension = 1.0
+shader_parameter/rotation = 0.0
+shader_parameter/rotationOverX = 0.0
+shader_parameter/rotationOverY = 0.0
+shader_parameter/rotationPerLayer = 0.0
+shader_parameter/screenOffset = Vector2(0, 0)
+shader_parameter/screenOffsetScale = Vector2(0.52, 0.1945)
+shader_parameter/screenOffsetLayerSpread = Vector2(14.040001, 7.0200005)
+shader_parameter/chromaticAberationMode = 1
+shader_parameter/chromaticAberationAmount = 0.1917
+shader_parameter/chromaticAberationSteps = 4
+shader_parameter/chromaticAberationDirection = Vector2(1, 1)
+shader_parameter/chromaticAberationDirectionTowardsCenter = -1.0
+shader_parameter/chromaticAberationCenterScale = 1.0
+shader_parameter/chromaticAberationCenterOffset = 1.0
+shader_parameter/chromaticAberationShifts = Vector3(0.93922, 1, 1.0233)
+shader_parameter/chromaticAberationSmear = 42.1408
+shader_parameter/fadingMode = 1
+shader_parameter/fadingPower = 0.25728
+shader_parameter/opacityFadingPower = 0.8
+shader_parameter/sizeXfadingPower = 0.25728
+shader_parameter/sizeYfadingPower = 0.25728
+shader_parameter/occlusionMode = 1
+shader_parameter/occlusionZOffset = 0.5735
+shader_parameter/occlusionTestMaxSteps = 10
+shader_parameter/occlusionTestStepStride = 1.0
+shader_parameter/occlusionTest_ViewDependingScaleAmount = 0.5
+shader_parameter/occlusionTest_ViewDependingDistance = 100.0
+shader_parameter/occlusionToSize = 0.0
+script = ExtResource("20_rm2eb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r0mvb"]
+render_priority = 0
+shader = ExtResource("21_fcl2o")
+shader_parameter/shapeType = 9
+shader_parameter/shapeScale = 0.2304
+shader_parameter/minShapeDistance = -0.09189999
+shader_parameter/maxShapeDistance = 0.0022
+shader_parameter/minShapeDistanceColor = -0.2857
+shader_parameter/maxShapeDistanceColor = 0.0714
+shader_parameter/shapeColorDistortion = 1.0
+shader_parameter/shapeAlphaDistortion = 2.8562
+shader_parameter/innerHSL = Vector4(0, 0, 0, 1)
+shader_parameter/outerHSL = Vector4(0, 0, 0, 1)
+shader_parameter/color = Color(1.3148649, 0.958567, 0.9233999, 1)
+shader_parameter/opacity = 0.0
+shader_parameter/minHueRandom = -0.12719306
+shader_parameter/maxHueRandom = 0.14912306
+shader_parameter/shapeNoiseAmount = 0.0
+shader_parameter/shapeNoiseScale = 0.0
+shader_parameter/sizeX = 11.131667
+shader_parameter/sizeY = 11.131667
+shader_parameter/worldSizeScale = 1.0
+shader_parameter/screenSizeScale = 1.0
+shader_parameter/worldSize_vs_screenSize = 1.0
+shader_parameter/randomScaleMin = 0.6667
+shader_parameter/randomScaleMax = 1.0351
+shader_parameter/extension = 1.0
+shader_parameter/rotation = 0.0
+shader_parameter/rotationOverX = 0.0
+shader_parameter/rotationOverY = 0.0
+shader_parameter/rotationPerLayer = 0.0
+shader_parameter/screenOffset = Vector2(0, 0)
+shader_parameter/screenOffsetScale = Vector2(0.50174797, 0.18767305)
+shader_parameter/screenOffsetLayerSpread = Vector2(4.605, 4.605)
+shader_parameter/chromaticAberationMode = 1
+shader_parameter/chromaticAberationAmount = 0.1917
+shader_parameter/chromaticAberationSteps = 4
+shader_parameter/chromaticAberationDirection = Vector2(1, 1)
+shader_parameter/chromaticAberationDirectionTowardsCenter = -1.0
+shader_parameter/chromaticAberationCenterScale = 1.0
+shader_parameter/chromaticAberationCenterOffset = 1.0
+shader_parameter/chromaticAberationShifts = Vector3(0.93922, 1, 1.0233)
+shader_parameter/chromaticAberationSmear = 42.1408
+shader_parameter/fadingMode = 1
+shader_parameter/fadingPower = 0.25728
+shader_parameter/opacityFadingPower = 0.8
+shader_parameter/sizeXfadingPower = 0.25728
+shader_parameter/sizeYfadingPower = 0.25728
+shader_parameter/occlusionMode = 1
+shader_parameter/occlusionZOffset = 0.5735
+shader_parameter/occlusionTestMaxSteps = 10
+shader_parameter/occlusionTestStepStride = 1.0
+shader_parameter/occlusionTest_ViewDependingScaleAmount = 0.5
+shader_parameter/occlusionTest_ViewDependingDistance = 100.0
+shader_parameter/occlusionToSize = 0.0
+script = ExtResource("20_rm2eb")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2lwgm"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_f4uxw"]
+height = 1
+noise = SubResource("FastNoiseLite_2lwgm")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_efhlp"]
+frequency = 0.0646
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1jwyb"]
+noise = SubResource("FastNoiseLite_efhlp")
+
+[sub_resource type="Curve" id="Curve_n18bq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 1, Vector2(1, 1), 0.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_u8rfd"]
+curve = SubResource("Curve_n18bq")
+
+[sub_resource type="Gradient" id="Gradient_5157q"]
+offsets = PackedFloat32Array(0, 0.28521127, 0.47887325, 0.6866197, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.4605409, 0.4605409, 1, 0.75361896, 1, 0.64468336, 1, 0.5460356, 0.71885765, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_47l5e"]
+gradient = SubResource("Gradient_5157q")
+
+[sub_resource type="Curve" id="Curve_ejw7t"]
+_data = [Vector2(0, 0), 0.0, 1.1375841, 0, 1, Vector2(0.43354434, 0.49319315), 0.0, 0.0, 0, 0, Vector2(0.5379747, 1), 0.0, 0.0, 0, 0, Vector2(0.74367094, 0.7827971), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.84735966, 0.0, 1, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_pbs2x"]
+curve = SubResource("Curve_ejw7t")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ebecc"]
+render_priority = 0
+shader = ExtResource("25_7jx0u")
+shader_parameter/shapeScale = 0.5
+shader_parameter/radialFill = SubResource("GradientTexture1D_47l5e")
+shader_parameter/radialFillStrength = 1.0
+shader_parameter/radialFillTile = 40.0
+shader_parameter/radialFillOffset = 0.0
+shader_parameter/radialFillRepeat = true
+shader_parameter/conicFill = SubResource("NoiseTexture2D_f4uxw")
+shader_parameter/conicFillStrength = 1.0
+shader_parameter/conicFillTile = 4.0
+shader_parameter/conicFillOffset = 0.0
+shader_parameter/conicFillRepeat = true
+shader_parameter/fillMultiply = 1.0
+shader_parameter/fillAdd = 0.0
+shader_parameter/shapeColorize = 0.0
+shader_parameter/radialMask = SubResource("CurveTexture_pbs2x")
+shader_parameter/radialMaskStrength = 1.0
+shader_parameter/radialMaskTile = 5.0
+shader_parameter/radialMaskOffset = 0.0
+shader_parameter/radialMaskRepeat = true
+shader_parameter/conicMask = SubResource("NoiseTexture2D_1jwyb")
+shader_parameter/conicMaskStrength = 1.0
+shader_parameter/conicMaskTile = 1.0
+shader_parameter/conicMaskOffset = 1.0
+shader_parameter/conicMaskRepeat = true
+shader_parameter/maskMultiply = 1.0
+shader_parameter/maskAdd = 0.0
+shader_parameter/color = Color(3.2865071, 1.8249024, 1.4863378, 1)
+shader_parameter/opacity = 0.0
+shader_parameter/opacityCurve = SubResource("CurveTexture_u8rfd")
+shader_parameter/minHueRandom = 0.0
+shader_parameter/maxHueRandom = 0.0
+shader_parameter/shapeNoiseAmount = 0.0
+shader_parameter/shapeNoiseScale = 0.0
+shader_parameter/sizeX = 84.6
+shader_parameter/sizeY = 84.6
+shader_parameter/worldSizeScale = 1.0
+shader_parameter/screenSizeScale = 1.0
+shader_parameter/worldSize_vs_screenSize = 1.0
+shader_parameter/randomScaleMin = 1.0
+shader_parameter/randomScaleMax = 1.0
+shader_parameter/extension = 1.0
+shader_parameter/rotation = 0.0
+shader_parameter/rotationOverX = 60.0588
+shader_parameter/rotationOverY = 0.0
+shader_parameter/rotationPerLayer = 90.0
+shader_parameter/screenOffset = Vector2(0, 0)
+shader_parameter/screenOffsetScale = Vector2(0, 0)
+shader_parameter/screenOffsetLayerSpread = Vector2(0, 0)
+shader_parameter/chromaticAberationMode = 1
+shader_parameter/chromaticAberationAmount = 0.1917
+shader_parameter/chromaticAberationSteps = 4
+shader_parameter/chromaticAberationDirection = Vector2(1, 1)
+shader_parameter/chromaticAberationDirectionTowardsCenter = -1.0
+shader_parameter/chromaticAberationCenterScale = 1.0
+shader_parameter/chromaticAberationCenterOffset = 1.0
+shader_parameter/chromaticAberationShifts = Vector3(0.93922, 1, 1.0233)
+shader_parameter/chromaticAberationSmear = 42.1408
+shader_parameter/fadingMode = 1
+shader_parameter/fadingPower = 0.0
+shader_parameter/opacityFadingPower = 3.0
+shader_parameter/sizeXfadingPower = 0.0
+shader_parameter/sizeYfadingPower = 0.0
+shader_parameter/occlusionMode = 1
+shader_parameter/occlusionZOffset = 0.5735
+shader_parameter/occlusionTestMaxSteps = 10
+shader_parameter/occlusionTestStepStride = 1.0
+shader_parameter/occlusionTest_ViewDependingScaleAmount = 0.5
+shader_parameter/occlusionTest_ViewDependingDistance = 100.0
+shader_parameter/occlusionToSize = 0.0
+script = ExtResource("24_1r0kr")
+
+[sub_resource type="Curve" id="Curve_1h2nm"]
+_data = [Vector2(0, 1), 0.0, -1.3770282, 0, 0, Vector2(1, 0), -0.00696731, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Resource" id="Resource_4e8bw"]
+script = ExtResource("18_37xqx")
+duration = 0.2
+curve = SubResource("Curve_1h2nm")
+
+[sub_resource type="Curve" id="Curve_nobls"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 1, Vector2(1, 1), 0.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Resource" id="Resource_0tto5"]
+script = ExtResource("18_37xqx")
+duration = 0.2
+curve = SubResource("Curve_nobls")
+scaleY = 60.0
+
+[sub_resource type="Resource" id="Resource_yaa7g"]
+script = ExtResource("19_ir4gp")
+executesInPause = true
+
+[sub_resource type="Resource" id="Resource_8m2ox"]
+script = ExtResource("17_71nkg")
+shakeAmountCurve = SubResource("Resource_4e8bw")
+shakeChangeFPSCurve = SubResource("Resource_0tto5")
+timeline = SubResource("Resource_yaa7g")
+smoothingStrength = 0.0367
+positionShake = Vector3(2, 0, 2)
+globalPosition = false
+globalRotation = false
+scaleShake = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="Resource" id="Resource_ip7kd"]
+script = ExtResource("4_gc2ks")
+
+[sub_resource type="Resource" id="Resource_4eobf"]
+script = ExtResource("18_yaa7g")
+seconds = 0.05
+metadata/_custom_type_script = "uid://ddhwhwos5kkrm"
+
+[sub_resource type="Resource" id="Resource_g3cwa"]
+script = ExtResource("18_yaa7g")
+seconds = 0.2
+metadata/_custom_type_script = "uid://ddhwhwos5kkrm"
+
+[sub_resource type="Curve" id="Curve_63bh3"]
+_data = [Vector2(0, 1), 0.0, -1.3770282, 0, 0, Vector2(1, 0), -0.00696731, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Resource" id="Resource_lnhr4"]
+script = ExtResource("18_37xqx")
+curve = SubResource("Curve_63bh3")
+
+[sub_resource type="Curve" id="Curve_4owub"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 1, Vector2(1, 1), 0.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Resource" id="Resource_sn0rc"]
+script = ExtResource("18_37xqx")
+curve = SubResource("Curve_4owub")
+scaleY = 60.0
+
+[sub_resource type="Resource" id="Resource_ir4gp"]
+script = ExtResource("17_71nkg")
+shakeAmountCurve = SubResource("Resource_lnhr4")
+shakeChangeFPSCurve = SubResource("Resource_sn0rc")
+timeline = ExtResource("12_1h2nm")
+smoothingStrength = 0.477
+positionShake = Vector3(0.2, 0, 0.2)
+globalPosition = false
+rotationShake = Vector3(20, 20, 20)
+globalRotation = false
+scaleShake = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="Resource" id="Resource_geea8"]
+script = ExtResource("4_gc2ks")
+
+[sub_resource type="Resource" id="Resource_msfts"]
+script = ExtResource("18_yaa7g")
+seconds = 0.3
+metadata/_custom_type_script = "uid://ddhwhwos5kkrm"
+
+[sub_resource type="Resource" id="Resource_gc2ks"]
+script = ExtResource("18_yaa7g")
+seconds = 0.3
+metadata/_custom_type_script = "uid://ddhwhwos5kkrm"
+
+[sub_resource type="Resource" id="Resource_78ruu"]
+script = ExtResource("17_71nkg")
+shakeAmountCurve = SubResource("Resource_4e8bw")
+shakeChangeFPSCurve = SubResource("Resource_0tto5")
+timeline = SubResource("Resource_yaa7g")
+smoothingStrength = 0.7539
+positionShake = Vector3(1, 0, 1)
+globalPosition = false
+globalRotation = false
+scaleShake = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="Curve" id="Curve_udnlj"]
+_limits = [0.5, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, -1.7989119, 0, 1, Vector2(0.17261907, 0.6894735), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_ebecc"]
+_limits = [1.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 1.9513608, 0, 1, Vector2(0.17261904, 1.3368421), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_tl24h"]
+_limits = [0.5, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, -1.7989119, 0, 1, Vector2(0.17261907, 0.6894735), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Resource" id="Resource_2lpe4"]
+script = ExtResource("48_udnlj")
+transformTarget = 4
+duration = 0.3
+xCurve = SubResource("Curve_udnlj")
+yCurve = SubResource("Curve_ebecc")
+zCurve = SubResource("Curve_tl24h")
+metadata/_custom_type_script = "uid://be4oc7tgr55vu"
+
+[sub_resource type="Resource" id="Resource_2lwgm"]
+script = ExtResource("49_tl24h")
+curves = [SubResource("Resource_2lpe4")]
+metadata/_custom_type_script = "uid://bqpiwp16h7614"
+
+[sub_resource type="Gradient" id="Gradient_ttr13"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0g18k"]
+gradient = SubResource("Gradient_ttr13")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1r0kr"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_color = Color(1.353256, 0, 0, 0.08627451)
+albedo_texture = SubResource("GradientTexture2D_0g18k")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="Curve" id="Curve_7jx0u"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Resource" id="Resource_udnlj"]
+script = ExtResource("44_78ruu")
+duration = 0.01
+curve = SubResource("Curve_7jx0u")
+
+[sub_resource type="Resource" id="Resource_tl24h"]
+script = ExtResource("44_78ruu")
+duration = 0.2
+curve = SubResource("Curve_7jx0u")
+
+[sub_resource type="Curve" id="Curve_ysmsc"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Resource" id="Resource_7axlu"]
+script = ExtResource("3_tvrwb")
+member = "amount"
+curve = SubResource("Curve_ysmsc")
+metadata/_custom_type_script = "uid://dvvfvlutisecy"
+
+[sub_resource type="Resource" id="Resource_i5utj"]
+script = ExtResource("5_f60al")
+owner = SubResource("Resource_geea8")
+layer = ExtResource("13_1h2nm")
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_7jx0u"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("51_udnlj")
+amount = 0.0
+num = 1
+blendMode = 0.7098
+distortionAmount = 0.069
+distortionAngle = 0.0
+distortionAngleSpeed = 0.0
+smearingSteps = 1
+smearing = 1.2164
+redShift = 0.3241
+blueShift = 0.0519
+blurRadiusX = 2
+blurRadiusY = 2
+blurSpread = 2.5418
+blurNoise = 3.0327
+lumaTint = Color(18.892157, 3.497829, 2.6066146, 1)
+lumaInputRange = Vector2(1, 1.5)
+lumaOutputRange = Vector2(0, 1)
+desaturation = 0.0
+downSampling = 1
+animationTargets = [SubResource("Resource_7axlu")]
+compositorEffectID = SubResource("Resource_i5utj")
+metadata/_custom_type_script = "uid://6jkixa201wux"
+
+[sub_resource type="Resource" id="Resource_jpti0"]
+script = ExtResource("5_f60al")
+owner = SubResource("Resource_geea8")
+layer = ExtResource("13_1h2nm")
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_udnlj"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("51_udnlj")
+amount = 0.0
+num = 1
+blendMode = 0.0
+distortionAmount = 1.7137
+distortionAngle = 90.0
+distortionAngleSpeed = 0.0
+smearingSteps = 6
+smearing = 1.1096
+redShift = 0.1387
+blueShift = 0.0404
+blurRadiusX = 1
+blurRadiusY = 2
+blurSpread = 4.1008
+blurNoise = 2.239
+lumaTint = Color(5.5880003, 0.738, 1.3000295, 1)
+lumaInputRange = Vector2(1, 1.5)
+lumaOutputRange = Vector2(0, 1)
+desaturation = 0.0
+downSampling = 1
+animationTargets = [SubResource("Resource_7axlu")]
+compositorEffectID = SubResource("Resource_jpti0")
+metadata/_custom_type_script = "uid://6jkixa201wux"
+
+[sub_resource type="Resource" id="Resource_d1q3q"]
+script = ExtResource("52_tl24h")
+effects = [SubResource("CompositorEffect_7jx0u"), SubResource("CompositorEffect_udnlj")]
+metadata/_custom_type_script = "uid://ckixweetchlo0"
+
+[sub_resource type="Resource" id="Resource_fykt2"]
+script = ExtResource("18_yaa7g")
+seconds = 0.01
+metadata/_custom_type_script = "uid://ddhwhwos5kkrm"
+
+[sub_resource type="Resource" id="Resource_1r0kr"]
+script = ExtResource("18_yaa7g")
+seconds = 0.01
+metadata/_custom_type_script = "uid://ddhwhwos5kkrm"
+
+[sub_resource type="Resource" id="Resource_7jx0u"]
+script = ExtResource("18_yaa7g")
+seconds = 0.4
+metadata/_custom_type_script = "uid://ddhwhwos5kkrm"
+
+[node name="Godot Con 2026" type="Node"]
+
+[node name="Setup" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Setup"]
+environment = SubResource("Environment_tvrwb")
+camera_attributes = SubResource("CameraAttributesPractical_gc2ks")
+compositor = SubResource("Compositor_71nkg")
+
+[node name="CameraManager" type="Node" parent="Setup" node_paths=PackedStringArray("worldEnvironment")]
+script = ExtResource("8_71nkg")
+worldEnvironment = NodePath("../WorldEnvironment")
+compositorLayout = SubResource("Resource_t7wop")
+lerpingCameras = true
+metadata/_custom_type_script = "uid://b64ylf5cx2514"
+
+[node name="TimeLineManager" type="Node" parent="Setup"]
+script = ExtResource("9_w3xg1")
+timeLines = [ExtResource("11_ir4gp"), ExtResource("12_1h2nm")]
+gametimeTimeline = ExtResource("11_ir4gp")
+realtimeTimeline = ExtResource("12_1h2nm")
+metadata/_custom_type_script = "uid://cdweilvlwjucr"
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="Ground" type="MeshInstance3D" parent="World"]
+mesh = SubResource("PlaneMesh_37xqx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_802yv")
+
+[node name="1m Cube" type="MeshInstance3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+mesh = SubResource("BoxMesh_37xqx")
+skeleton = NodePath("../..")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World"]
+transform = Transform3D(0.42419946, -0.76459706, 0.48522803, 0.27232343, 0.6187318, 0.73689276, -0.863652, -0.18045057, 0.47068337, 0, 0, 0)
+light_color = Color(1, 0.96060306, 0.9274734, 1)
+shadow_enabled = true
+directional_shadow_blend_splits = true
+
+[node name="Enemy" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy"]
+shape = SubResource("CapsuleShape3D_ir4gp")
+
+[node name="Graphics" type="Node3D" parent="Enemy"]
+
+[node name="Body" type="MeshInstance3D" parent="Enemy/Graphics"]
+mesh = SubResource("CapsuleMesh_1h2nm")
+surface_material_override/0 = SubResource("StandardMaterial3D_rovp1")
+
+[node name="Red Glow" type="MeshInstance3D" parent="Enemy/Graphics"]
+transform = Transform3D(189.5417, 0, 0, 0, 2.3508928, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_x2ntx")
+surface_material_override/0 = SubResource("StandardMaterial3D_6edtt")
+
+[node name="Blue Rect Fill Particles" type="GPUParticles3D" parent="Enemy/Graphics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49806547, 0)
+material_override = SubResource("StandardMaterial3D_0tto5")
+emitting = false
+amount = 30
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+fixed_fps = 0
+interpolate = false
+fract_delta = false
+process_material = SubResource("ParticleProcessMaterial_geea8")
+draw_pass_1 = SubResource("QuadMesh_g3cwa")
+
+[node name="Blue Rectangle Outline Particles" type="GPUParticles3D" parent="Enemy/Graphics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49806547, 0)
+material_override = SubResource("StandardMaterial3D_ir4gp")
+emitting = false
+amount = 10
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+fixed_fps = 0
+interpolate = false
+fract_delta = false
+process_material = SubResource("ParticleProcessMaterial_1h2nm")
+draw_pass_1 = SubResource("QuadMesh_g3cwa")
+
+[node name="Orange Ember Particles" type="GPUParticles3D" parent="Enemy/Graphics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49806547, 0)
+material_override = SubResource("StandardMaterial3D_r0mvb")
+emitting = false
+amount = 400
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 0
+interpolate = false
+fract_delta = false
+process_material = SubResource("ParticleProcessMaterial_22le1")
+draw_pass_1 = SubResource("QuadMesh_g3cwa")
+
+[node name="Red Sphere Particles" type="GPUParticles3D" parent="Enemy/Graphics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24141622, 0)
+material_override = SubResource("StandardMaterial3D_ovegg")
+emitting = false
+amount = 15
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 0
+interpolate = false
+fract_delta = false
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_sumyk")
+draw_pass_1 = SubResource("SphereMesh_22le1")
+
+[node name="Big EPunch Hit" type="AudioStreamPlayer3D" parent="Enemy/Graphics"]
+stream = ExtResource("15_0tto5")
+unit_size = 50.0
+attenuation_filter_cutoff_hz = 20500.0
+attenuation_filter_db = 0.0
+
+[node name="Big Retro Computer Hit2" type="AudioStreamPlayer3D" parent="Enemy/Graphics"]
+stream = ExtResource("17_ir4gp")
+unit_size = 50.0
+attenuation_filter_cutoff_hz = 20500.0
+attenuation_filter_db = 0.0
+
+[node name="Count" type="AudioStreamPlayer3D" parent="Enemy/Graphics"]
+stream = ExtResource("12_ip7kd")
+unit_size = 50.0
+attenuation_filter_cutoff_hz = 20500.0
+attenuation_filter_db = 0.0
+
+[node name="Count Low" type="AudioStreamPlayer3D" parent="Enemy/Graphics"]
+stream = ExtResource("12_ip7kd")
+unit_size = 50.0
+pitch_scale = 0.5
+attenuation_filter_cutoff_hz = 20500.0
+attenuation_filter_db = 0.0
+
+[node name="Swish" type="AudioStreamPlayer3D" parent="Enemy/Graphics"]
+stream = ExtResource("13_ovegg")
+unit_size = 50.0
+pitch_scale = 0.5
+attenuation_filter_cutoff_hz = 20500.0
+attenuation_filter_db = 0.0
+
+[node name="Big Hit" type="AudioStreamPlayer3D" parent="Enemy/Graphics"]
+stream = ExtResource("14_sumyk")
+unit_size = 50.0
+attenuation_filter_cutoff_hz = 20500.0
+attenuation_filter_db = 0.0
+
+[node name="FlareVFX" type="Node3D" parent="Enemy/Graphics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4494989, 0)
+script = ExtResource("15_22le1")
+preset = ExtResource("16_msfts")
+editMode = true
+metadata/_custom_type_script = "uid://wo6881tihorq"
+
+[node name="Layer 0 Core" type="MeshInstance3D" parent="Enemy/Graphics/FlareVFX"]
+mesh = ExtResource("17_78ruu")
+surface_material_override/0 = SubResource("ShaderMaterial_7jx0u")
+
+[node name="Layer 1 Big Glow" type="MeshInstance3D" parent="Enemy/Graphics/FlareVFX"]
+mesh = ExtResource("17_78ruu")
+surface_material_override/0 = SubResource("ShaderMaterial_udnlj")
+
+[node name="Layer 2 Ghosts" type="MeshInstance3D" parent="Enemy/Graphics/FlareVFX"]
+mesh = ExtResource("22_ttr13")
+surface_material_override/0 = SubResource("ShaderMaterial_tl24h")
+
+[node name="Layer 3 Ghosts" type="MeshInstance3D" parent="Enemy/Graphics/FlareVFX"]
+mesh = ExtResource("23_0g18k")
+surface_material_override/0 = SubResource("ShaderMaterial_r0mvb")
+
+[node name="Layer 4 " type="MeshInstance3D" parent="Enemy/Graphics/FlareVFX"]
+
+[node name="Layer 5 Rainbow God Rays" type="MeshInstance3D" parent="Enemy/Graphics/FlareVFX"]
+mesh = ExtResource("17_78ruu")
+surface_material_override/0 = SubResource("ShaderMaterial_ebecc")
+
+[node name="On Electric Hit" type="Node" parent="Enemy"]
+script = ExtResource("4_fiwbu")
+metadata/_custom_type_script = "uid://b4yjsis2fh64c"
+
+[node name="Shake" type="Node" parent="Enemy/On Electric Hit" node_paths=PackedStringArray("targets")]
+script = ExtResource("5_wsd6q")
+shakeEffect = SubResource("Resource_8m2ox")
+targets = [NodePath("../../Graphics")]
+metadata/_custom_type_script = "uid://bnhnintao4qu0"
+
+[node name="Play Blue Rect Fill Particles" type="Node" parent="Enemy/On Electric Hit" node_paths=PackedStringArray("particles3D")]
+script = ExtResource("8_843m0")
+particles3D = NodePath("../../Graphics/Blue Rect Fill Particles")
+metadata/_custom_type_script = "uid://dnstanbmrqthf"
+
+[node name="Play Blue Rect Outline Particles" type="Node" parent="Enemy/On Electric Hit" node_paths=PackedStringArray("particles3D")]
+script = ExtResource("8_843m0")
+particles3D = NodePath("../../Graphics/Blue Rectangle Outline Particles")
+metadata/_custom_type_script = "uid://dnstanbmrqthf"
+
+[node name="Play Big Retro Computer Hit2" type="Node" parent="Enemy/On Electric Hit" node_paths=PackedStringArray("player")]
+script = ExtResource("7_vbfsi")
+player = NodePath("../../Graphics/Big Retro Computer Hit2")
+generatePools = false
+metadata/_custom_type_script = "uid://ddgf2mfdmqywc"
+
+[node name="Flash Blue Shield" type="Node" parent="Enemy/On Electric Hit" node_paths=PackedStringArray("targets")]
+script = ExtResource("23_8m2ox")
+flashEffect = ExtResource("24_4eobf")
+targets = [NodePath("../../Graphics/Body")]
+metadata/_custom_type_script = "uid://dnwqkymbre3vb"
+
+[node name="Analog TV Post FX" type="Node" parent="Enemy/On Electric Hit"]
+script = ExtResource("25_1h2nm")
+metadata/_custom_type_script = "uid://ceaglilesxsi4"
+
+[node name="Analog TV VFX" type="Node" parent="Enemy/On Electric Hit/Analog TV Post FX"]
+script = ExtResource("13_4e8bw")
+preset = ExtResource("15_37xqx")
+layer = ExtResource("13_1h2nm")
+ownerReference = SubResource("Resource_ip7kd")
+metadata/_custom_type_script = "uid://cebnf3dtch0oh"
+
+[node name="Tween Impact Wave VFX" type="Node" parent="Enemy/On Electric Hit/Analog TV Post FX" node_paths=PackedStringArray("compositorVFX")]
+script = ExtResource("17_ip7kd")
+compositorVFX = NodePath("../Analog TV VFX")
+endValue = 1.0
+duration = SubResource("Resource_4eobf")
+forceStartValue = true
+metadata/_custom_type_script = "uid://di737cq62huln"
+
+[node name="Tween Impact Wave VFX2" type="Node" parent="Enemy/On Electric Hit/Analog TV Post FX" node_paths=PackedStringArray("compositorVFX")]
+script = ExtResource("17_ip7kd")
+compositorVFX = NodePath("../Analog TV VFX")
+duration = SubResource("Resource_g3cwa")
+metadata/_custom_type_script = "uid://di737cq62huln"
+
+[node name="On Punch Hit" type="Node" parent="Enemy"]
+script = ExtResource("4_fiwbu")
+metadata/_custom_type_script = "uid://b4yjsis2fh64c"
+
+[node name="Shake" type="Node" parent="Enemy/On Punch Hit" node_paths=PackedStringArray("targets")]
+script = ExtResource("5_wsd6q")
+shakeEffect = SubResource("Resource_ir4gp")
+targets = [NodePath("../../Graphics")]
+metadata/_custom_type_script = "uid://bnhnintao4qu0"
+
+[node name="Play Orange Ember Particles" type="Node" parent="Enemy/On Punch Hit" node_paths=PackedStringArray("particles3D")]
+script = ExtResource("8_843m0")
+particles3D = NodePath("../../Graphics/Orange Ember Particles")
+metadata/_custom_type_script = "uid://dnstanbmrqthf"
+
+[node name="Play Big EPunch Hit" type="Node" parent="Enemy/On Punch Hit" node_paths=PackedStringArray("player")]
+script = ExtResource("7_vbfsi")
+player = NodePath("../../Graphics/Big EPunch Hit")
+generatePools = false
+metadata/_custom_type_script = "uid://ddgf2mfdmqywc"
+
+[node name="Flash Orange Boost" type="Node" parent="Enemy/On Punch Hit" node_paths=PackedStringArray("targets")]
+script = ExtResource("23_8m2ox")
+flashEffect = ExtResource("29_nobls")
+targets = [NodePath("../../Graphics/Body")]
+metadata/_custom_type_script = "uid://dnwqkymbre3vb"
+
+[node name="Impact Wave Post FX" type="Node" parent="Enemy/On Punch Hit"]
+script = ExtResource("25_1h2nm")
+metadata/_custom_type_script = "uid://ceaglilesxsi4"
+
+[node name="Impact Wave VFX" type="Node" parent="Enemy/On Punch Hit/Impact Wave Post FX"]
+script = ExtResource("13_4e8bw")
+preset = ExtResource("14_nobls")
+layer = ExtResource("13_1h2nm")
+ownerReference = SubResource("Resource_geea8")
+metadata/_custom_type_script = "uid://cebnf3dtch0oh"
+
+[node name="Tween Impact Wave VFX" type="Node" parent="Enemy/On Punch Hit/Impact Wave Post FX" node_paths=PackedStringArray("compositorVFX")]
+script = ExtResource("17_ip7kd")
+compositorVFX = NodePath("../Impact Wave VFX")
+endValue = 1.0
+duration = SubResource("Resource_msfts")
+forceStartValue = true
+metadata/_custom_type_script = "uid://di737cq62huln"
+
+[node name="Tween Impact Wave VFX2" type="Node" parent="Enemy/On Punch Hit/Impact Wave Post FX" node_paths=PackedStringArray("compositorVFX")]
+script = ExtResource("17_ip7kd")
+compositorVFX = NodePath("../Impact Wave VFX")
+duration = SubResource("Resource_gc2ks")
+forceStartValue = true
+metadata/_custom_type_script = "uid://di737cq62huln"
+
+[node name="On Death" type="Node" parent="Enemy"]
+script = ExtResource("25_1h2nm")
+metadata/_custom_type_script = "uid://ceaglilesxsi4"
+
+[node name="Reset Transform" type="Node" parent="Enemy/On Death" node_paths=PackedStringArray("target")]
+script = ExtResource("30_yaa7g")
+target = NodePath("../../Graphics/Body")
+scaleMode = 1
+metadata/_custom_type_script = "uid://cnp3xr8gawyi6"
+
+[node name="Repeat 5x Red Glow Blink" type="Node" parent="Enemy/On Death" node_paths=PackedStringArray("action")]
+script = ExtResource("31_8m2ox")
+action = NodePath("Red Glow Blink")
+maxNumRepeats = 5
+metadata/_custom_type_script = "uid://j41ppn275x8i"
+
+[node name="Red Glow Blink" type="Node" parent="Enemy/On Death/Repeat 5x Red Glow Blink"]
+script = ExtResource("32_4eobf")
+metadata/_custom_type_script = "uid://dy65lu5p2yf3j"
+
+[node name="Shake2" type="Node" parent="Enemy/On Death/Repeat 5x Red Glow Blink/Red Glow Blink" node_paths=PackedStringArray("targets")]
+script = ExtResource("5_wsd6q")
+shakeEffect = SubResource("Resource_78ruu")
+targets = [NodePath("../../../../Graphics")]
+metadata/_custom_type_script = "uid://bnhnintao4qu0"
+
+[node name="Flash2" type="Node" parent="Enemy/On Death/Repeat 5x Red Glow Blink/Red Glow Blink" node_paths=PackedStringArray("targets")]
+script = ExtResource("23_8m2ox")
+flashEffect = ExtResource("33_geea8")
+targets = [NodePath("../../../../Graphics/Body")]
+metadata/_custom_type_script = "uid://dnwqkymbre3vb"
+
+[node name="Play Count" type="Node" parent="Enemy/On Death/Repeat 5x Red Glow Blink/Red Glow Blink" node_paths=PackedStringArray("player")]
+script = ExtResource("7_vbfsi")
+player = NodePath("../../../../Graphics/Count")
+generatePools = false
+metadata/_custom_type_script = "uid://ddgf2mfdmqywc"
+
+[node name="AnimateTransform" type="Node" parent="Enemy/On Death/Repeat 5x Red Glow Blink/Red Glow Blink" node_paths=PackedStringArray("target")]
+script = ExtResource("47_7jx0u")
+animations = SubResource("Resource_2lwgm")
+target = NodePath("../../../../Graphics/Body")
+metadata/_custom_type_script = "uid://cbtqgliarexam"
+
+[node name="Red Flare Tween" type="Node" parent="Enemy/On Death/Repeat 5x Red Glow Blink/Red Glow Blink"]
+script = ExtResource("25_1h2nm")
+metadata/_custom_type_script = "uid://ceaglilesxsi4"
+
+[node name="TweenMaterial" type="Node" parent="Enemy/On Death/Repeat 5x Red Glow Blink/Red Glow Blink/Red Flare Tween" node_paths=PackedStringArray("target")]
+script = ExtResource("43_msfts")
+toMaterial = SubResource("StandardMaterial3D_1r0kr")
+tweenType = SubResource("Resource_udnlj")
+target = NodePath("../../../../../Graphics/Red Glow")
+slot = 2
+metadata/_custom_type_script = "uid://0wcfunmv4j6d"
+
+[node name="TweenMaterial2" type="Node" parent="Enemy/On Death/Repeat 5x Red Glow Blink/Red Glow Blink/Red Flare Tween" node_paths=PackedStringArray("target")]
+script = ExtResource("43_msfts")
+toMaterial = SubResource("StandardMaterial3D_6edtt")
+tweenType = SubResource("Resource_tl24h")
+target = NodePath("../../../../../Graphics/Red Glow")
+slot = 2
+metadata/_custom_type_script = "uid://0wcfunmv4j6d"
+
+[node name="White Glitch Blink" type="Node" parent="Enemy/On Death"]
+script = ExtResource("32_4eobf")
+metadata/_custom_type_script = "uid://dy65lu5p2yf3j"
+
+[node name="Glitch Bloom Post FX" type="Node" parent="Enemy/On Death/White Glitch Blink"]
+script = ExtResource("25_1h2nm")
+metadata/_custom_type_script = "uid://ceaglilesxsi4"
+
+[node name="Glitch Bloom VFX" type="Node" parent="Enemy/On Death/White Glitch Blink/Glitch Bloom Post FX"]
+script = ExtResource("13_4e8bw")
+preset = SubResource("Resource_d1q3q")
+layer = ExtResource("13_1h2nm")
+ownerReference = SubResource("Resource_geea8")
+metadata/_custom_type_script = "uid://cebnf3dtch0oh"
+
+[node name="Tween Impact Wave VFX" type="Node" parent="Enemy/On Death/White Glitch Blink/Glitch Bloom Post FX" node_paths=PackedStringArray("compositorVFX")]
+script = ExtResource("17_ip7kd")
+compositorVFX = NodePath("../Glitch Bloom VFX")
+endValue = 1.0
+duration = SubResource("Resource_fykt2")
+forceStartValue = true
+metadata/_custom_type_script = "uid://di737cq62huln"
+
+[node name="Delay" type="Node" parent="Enemy/On Death/White Glitch Blink/Glitch Bloom Post FX"]
+script = ExtResource("28_4e8bw")
+duration = 0.2
+metadata/_custom_type_script = "uid://b2g7rycr0ouu4"
+
+[node name="Tween Impact Wave VFX2" type="Node" parent="Enemy/On Death/White Glitch Blink/Glitch Bloom Post FX" node_paths=PackedStringArray("compositorVFX")]
+script = ExtResource("17_ip7kd")
+compositorVFX = NodePath("../Glitch Bloom VFX")
+duration = SubResource("Resource_gc2ks")
+forceStartValue = true
+metadata/_custom_type_script = "uid://di737cq62huln"
+
+[node name="Flash" type="Node" parent="Enemy/On Death/White Glitch Blink" node_paths=PackedStringArray("targets")]
+script = ExtResource("23_8m2ox")
+flashEffect = ExtResource("34_g3cwa")
+targets = [NodePath("../../../Graphics/Body")]
+metadata/_custom_type_script = "uid://dnwqkymbre3vb"
+
+[node name="AnimateTransform2" type="Node" parent="Enemy/On Death/White Glitch Blink" node_paths=PackedStringArray("target")]
+script = ExtResource("47_7jx0u")
+animations = SubResource("Resource_2lwgm")
+target = NodePath("../../../Graphics/Body")
+metadata/_custom_type_script = "uid://cbtqgliarexam"
+
+[node name="Play Count" type="Node" parent="Enemy/On Death/White Glitch Blink" node_paths=PackedStringArray("player")]
+script = ExtResource("7_vbfsi")
+player = NodePath("../../../Graphics/Count Low")
+generatePools = false
+metadata/_custom_type_script = "uid://ddgf2mfdmqywc"
+
+[node name="Play Swish" type="Node" parent="Enemy/On Death/White Glitch Blink" node_paths=PackedStringArray("player")]
+script = ExtResource("7_vbfsi")
+player = NodePath("../../../Graphics/Swish")
+generatePools = false
+metadata/_custom_type_script = "uid://ddgf2mfdmqywc"
+
+[node name="Delay" type="Node" parent="Enemy/On Death"]
+script = ExtResource("28_4e8bw")
+duration = 0.2
+metadata/_custom_type_script = "uid://b2g7rycr0ouu4"
+
+[node name="Shrink" type="Node" parent="Enemy/On Death" node_paths=PackedStringArray("target")]
+script = ExtResource("30_yaa7g")
+target = NodePath("../../Graphics/Body")
+scaleMode = 1
+scale = Vector3(0.0001, 0.0001, 0.0001)
+metadata/_custom_type_script = "uid://cnp3xr8gawyi6"
+
+[node name="Big Explosion" type="Node" parent="Enemy/On Death"]
+script = ExtResource("32_4eobf")
+metadata/_custom_type_script = "uid://dy65lu5p2yf3j"
+
+[node name="Body Parts Explosion" type="Node" parent="Enemy/On Death/Big Explosion" node_paths=PackedStringArray("particles3D")]
+script = ExtResource("8_843m0")
+particles3D = NodePath("../../../Graphics/Red Sphere Particles")
+metadata/_custom_type_script = "uid://dnstanbmrqthf"
+
+[node name="Play Orange Ember Particles" type="Node" parent="Enemy/On Death/Big Explosion" node_paths=PackedStringArray("particles3D")]
+script = ExtResource("8_843m0")
+particles3D = NodePath("../../../Graphics/Orange Ember Particles")
+metadata/_custom_type_script = "uid://dnstanbmrqthf"
+
+[node name="Play Blue Rect Fill" type="Node" parent="Enemy/On Death/Big Explosion" node_paths=PackedStringArray("particles3D")]
+script = ExtResource("8_843m0")
+particles3D = NodePath("../../../Graphics/Blue Rect Fill Particles")
+metadata/_custom_type_script = "uid://dnstanbmrqthf"
+
+[node name="Play Blue Rect Outlines" type="Node" parent="Enemy/On Death/Big Explosion" node_paths=PackedStringArray("particles3D")]
+script = ExtResource("8_843m0")
+particles3D = NodePath("../../../Graphics/Blue Rectangle Outline Particles")
+metadata/_custom_type_script = "uid://dnstanbmrqthf"
+
+[node name="Play Big Hit" type="Node" parent="Enemy/On Death/Big Explosion" node_paths=PackedStringArray("player")]
+script = ExtResource("7_vbfsi")
+player = NodePath("../../../Graphics/Big Hit")
+generatePools = false
+metadata/_custom_type_script = "uid://ddgf2mfdmqywc"
+
+[node name="Big Lens Flare Tween" type="Node" parent="Enemy/On Death/Big Explosion"]
+script = ExtResource("25_1h2nm")
+metadata/_custom_type_script = "uid://ceaglilesxsi4"
+
+[node name="TweenFloat" type="Node" parent="Enemy/On Death/Big Explosion/Big Lens Flare Tween"]
+script = ExtResource("45_6edtt")
+target = ExtResource("16_msfts")
+targetMemberPath = "opacity"
+endValue = 0.75
+duration = SubResource("Resource_1r0kr")
+metadata/_custom_type_script = "uid://dm4i0s67kio5v"
+
+[node name="TweenFloat2" type="Node" parent="Enemy/On Death/Big Explosion/Big Lens Flare Tween"]
+script = ExtResource("45_6edtt")
+target = ExtResource("16_msfts")
+targetMemberPath = "opacity"
+duration = SubResource("Resource_7jx0u")
+metadata/_custom_type_script = "uid://dm4i0s67kio5v"
+
+[node name="Post Shock Wave Tween" type="Node" parent="Enemy/On Death/Big Explosion"]
+script = ExtResource("25_1h2nm")
+metadata/_custom_type_script = "uid://ceaglilesxsi4"
+
+[node name="Impact Wave VFX" type="Node" parent="Enemy/On Death/Big Explosion/Post Shock Wave Tween"]
+script = ExtResource("13_4e8bw")
+preset = ExtResource("14_nobls")
+layer = ExtResource("13_1h2nm")
+ownerReference = SubResource("Resource_geea8")
+metadata/_custom_type_script = "uid://cebnf3dtch0oh"
+
+[node name="Tween Impact Wave VFX" type="Node" parent="Enemy/On Death/Big Explosion/Post Shock Wave Tween" node_paths=PackedStringArray("compositorVFX")]
+script = ExtResource("17_ip7kd")
+compositorVFX = NodePath("../Impact Wave VFX")
+endValue = 1.0
+duration = SubResource("Resource_msfts")
+forceStartValue = true
+metadata/_custom_type_script = "uid://di737cq62huln"
+
+[node name="Tween Impact Wave VFX2" type="Node" parent="Enemy/On Death/Big Explosion/Post Shock Wave Tween" node_paths=PackedStringArray("compositorVFX")]
+script = ExtResource("17_ip7kd")
+compositorVFX = NodePath("../Impact Wave VFX")
+duration = SubResource("Resource_gc2ks")
+forceStartValue = true
+metadata/_custom_type_script = "uid://di737cq62huln"

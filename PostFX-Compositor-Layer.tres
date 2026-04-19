@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CompositorEffectLayer" load_steps=2 format=3 uid="uid://b0cwrx25ct7ht"]
+
+[ext_resource type="Script" uid="uid://b2ik21q1iwjvo" path="res://addons/rokojori_action_library/Runtime/Rendering/Compositor/CompositorEffectReferences/CompositorEffectLayer.cs" id="1_81qoc"]
+
+[resource]
+script = ExtResource("1_81qoc")
+metadata/_custom_type_script = "uid://b2ik21q1iwjvo"

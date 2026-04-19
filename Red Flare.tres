@@ -1,0 +1,265 @@
+[gd_resource type="Resource" script_class="FlarePreset" load_steps=42 format=3 uid="uid://bm68c08jkccka"]
+
+[ext_resource type="Script" uid="uid://dmswtuayeoagf" path="res://addons/rokojori_action_library/Runtime/VFX/FlareVFX/FlareChromaticAberation/OrientatedFlareChromaticAberation.cs" id="1_0p0lr"]
+[ext_resource type="Script" uid="uid://c67s0ccpomg2s" path="res://addons/rokojori_action_library/Runtime/VFX/FlareVFX/FlareFading/EdgeFlareFading.cs" id="2_yr3fk"]
+[ext_resource type="Script" uid="uid://0epjgkk6qmhy" path="res://addons/rokojori_action_library/Runtime/VFX/FlareVFX/FlareType/SDFShapeFlareType.cs" id="4_d653j"]
+[ext_resource type="Script" uid="uid://u3g0mlwlpd6s" path="res://addons/rokojori_action_library/Runtime/VFX/FlareVFX/FlareLayer.cs" id="5_hwkd6"]
+[ext_resource type="Script" uid="uid://btuv7v342v3k6" path="res://addons/rokojori_action_library/Runtime/VFX/FlareVFX/FlareType/TextureFlareType.cs" id="6_8ansi"]
+[ext_resource type="Script" uid="uid://dk8t1ljh3jroo" path="res://addons/rokojori_action_library/Runtime/VFX/FlareVFX/FlareType/EllipseFlareType.cs" id="7_al7lr"]
+[ext_resource type="Script" uid="uid://bmcf4qxpqs8mb" path="res://addons/rokojori_action_library/Runtime/VFX/FlareVFX/FlareFading/ParametricFlareFading.cs" id="8_3t2wo"]
+[ext_resource type="Script" uid="uid://bq2hh5ledvviu" path="res://addons/rokojori_action_library/Runtime/VFX/FlareVFX/FlareOcclusion/FadingFlareOcclusion.cs" id="11_qfhxx"]
+[ext_resource type="Script" uid="uid://bh37fg1dnc37s" path="res://addons/rokojori_action_library/Runtime/VFX/FlareVFX/FlarePreset.cs" id="12_0j7hl"]
+
+[sub_resource type="Resource" id="Resource_dcmnq"]
+script = ExtResource("1_0p0lr")
+orientation = 1
+amount = 0.1917
+steps = 4
+smear = 42.1408
+offsetR = -0.3039
+offsetB = 0.1165
+metadata/_custom_type_script = "uid://dmswtuayeoagf"
+
+[sub_resource type="Resource" id="Resource_g52pi"]
+script = ExtResource("2_yr3fk")
+sizeAmount = 0.3216
+metadata/_custom_type_script = "uid://c67s0ccpomg2s"
+
+[sub_resource type="Gradient" id="Gradient_ade2u"]
+offsets = PackedFloat32Array(0, 0.4732143, 0.59821427, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.0714286, 1, 1, 1, 0.008474581, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x0p8u"]
+gradient = SubResource("Gradient_ade2u")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.4957265)
+
+[sub_resource type="Resource" id="Resource_krf45"]
+script = ExtResource("6_8ansi")
+texture = SubResource("GradientTexture2D_x0p8u")
+textureUVScale = 4.0
+maskUVScale = 4.0
+metadata/_custom_type_script = "uid://btuv7v342v3k6"
+
+[sub_resource type="Curve" id="Curve_a4g6s"]
+_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_xxny3"]
+curve = SubResource("Curve_a4g6s")
+
+[sub_resource type="Resource" id="Resource_nuxa8"]
+script = ExtResource("5_hwkd6")
+layerName = "Core"
+flareType = SubResource("Resource_krf45")
+overwriteColor = Color(2.343, 2.343, 2.343, 1)
+overwriteAmount = 0.2568
+opacityCurvePerLayer = SubResource("CurveTexture_xxny3")
+tint = Color(4.8530827, 4.8530827, 4.8530827, 1)
+lighntessShift = -10.3896
+size = 4.0
+randomScaleMin = 0.6503
+randomScaleMax = 2.0
+screenOffsetLayerScale = 0.153
+screenOffsetLayerDirection = Vector2(1, 1)
+metadata/_custom_type_script = "uid://u3g0mlwlpd6s"
+
+[sub_resource type="Resource" id="Resource_4qtqc"]
+script = ExtResource("8_3t2wo")
+fading = 0.0
+opacity = 1.0
+sizeX = 0.0
+sizeY = 0.6289
+metadata/_custom_type_script = "uid://bmcf4qxpqs8mb"
+
+[sub_resource type="Resource" id="Resource_gwku0"]
+script = ExtResource("4_d653j")
+shapeType = 0
+shapeOpacityBorderOffset = 0.0992
+shapeOpacityBorderSpread = 0.6013
+shapeOpacityDistribution = 3.1273
+shapeColorMappingInnerBorder = -0.5455
+shapeColorMappingOuterBorder = 0.1983
+outerOpacity = 0.0
+metadata/_custom_type_script = "uid://0epjgkk6qmhy"
+
+[sub_resource type="Curve" id="Curve_fy8er"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 1, Vector2(1, 1), 0.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ls5mq"]
+curve = SubResource("Curve_fy8er")
+
+[sub_resource type="Resource" id="Resource_8vqmt"]
+script = ExtResource("5_hwkd6")
+layerName = "Big Glow"
+opacity = 0.01
+flareType = SubResource("Resource_gwku0")
+opacityCurvePerLayer = SubResource("CurveTexture_ls5mq")
+temparatureShift = 8.4706
+saturationShift = -68.8168
+size = 1000.0
+sizeScale = 0.0495
+sizeYScale = 0.5976
+screenSizeScale = 0.616
+fading = SubResource("Resource_4qtqc")
+metadata/_custom_type_script = "uid://u3g0mlwlpd6s"
+
+[sub_resource type="Resource" id="Resource_i6nu1"]
+script = ExtResource("4_d653j")
+shapeType = 5
+shapeRotation = -72.0
+shapeScale = 0.2565
+shapeOpacityInnerBorder = 0.1129
+shapeOpacityBorderSpread = 0.0536
+shapeOpacityDistribution = 2.8562
+shapeColorMappingInnerBorder = -0.6607
+shapeColorMappingOuterBorder = 0.0714
+shapeColorMappingBorderOffset = 0.4822
+innerOpacity = 0.0
+metadata/_custom_type_script = "uid://0epjgkk6qmhy"
+
+[sub_resource type="Resource" id="Resource_54d3y"]
+script = ExtResource("5_hwkd6")
+layerName = "Ghosts"
+opacity = 0.01
+numLayers = 8
+flareType = SubResource("Resource_i6nu1")
+overwriteAmount = 0.9234
+minHueRandom = -45.7895
+maxHueRandom = 53.6843
+size = 4.2865
+randomScaleMin = 0.4474
+randomScaleMax = 1.193
+screenOffsetStaticDirection = Vector2(0.52, 0.1945)
+screenOffsetLayerScale = 0.1404
+screenOffsetLayerDirection = Vector2(100, 50)
+metadata/_custom_type_script = "uid://u3g0mlwlpd6s"
+
+[sub_resource type="Resource" id="Resource_r0esw"]
+script = ExtResource("4_d653j")
+shapeType = 9
+shapeRotation = 10.9565
+shapeScale = 0.2304
+shapeOpacityInnerBorder = 0.0373
+shapeOpacityOuterBorder = -0.025
+shapeOpacityBorderOffset = -0.051
+shapeOpacityBorderSpread = 0.0782
+shapeOpacityDistribution = 2.8562
+shapeColorMappingInnerBorder = -0.2857
+shapeColorMappingOuterBorder = 0.0714
+metadata/_custom_type_script = "uid://0epjgkk6qmhy"
+
+[sub_resource type="Resource" id="Resource_0p0lr"]
+script = ExtResource("5_hwkd6")
+layerName = "Ghosts"
+opacity = 0.02
+numLayers = 7
+flareType = SubResource("Resource_r0esw")
+overwriteAmount = 0.9234
+minHueRandom = -45.7895
+maxHueRandom = 53.6843
+size = 40.0
+sizeScale = 0.6579
+randomScaleMin = 0.6667
+randomScaleMax = 1.0351
+screenOffsetStaticScale = 0.9649
+screenOffsetStaticDirection = Vector2(0.52, 0.1945)
+screenOffsetLayerScale = 0.4605
+screenOffsetLayerDirection = Vector2(10, 10)
+metadata/_custom_type_script = "uid://u3g0mlwlpd6s"
+
+[sub_resource type="Resource" id="Resource_yr3fk"]
+script = ExtResource("5_hwkd6")
+metadata/_custom_type_script = "uid://u3g0mlwlpd6s"
+
+[sub_resource type="Resource" id="Resource_lwfhk"]
+script = ExtResource("8_3t2wo")
+fading = 0.0
+opacity = 3.0
+sizeX = 0.0
+sizeY = 0.0
+metadata/_custom_type_script = "uid://bmcf4qxpqs8mb"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2lwgm"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_f4uxw"]
+height = 1
+noise = SubResource("FastNoiseLite_2lwgm")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_efhlp"]
+frequency = 0.0646
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1jwyb"]
+noise = SubResource("FastNoiseLite_efhlp")
+
+[sub_resource type="Gradient" id="Gradient_5157q"]
+offsets = PackedFloat32Array(0, 0.28521127, 0.47887325, 0.6866197, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.4605409, 0.4605409, 1, 0.75361896, 1, 0.64468336, 1, 0.5460356, 0.71885765, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_47l5e"]
+gradient = SubResource("Gradient_5157q")
+
+[sub_resource type="Curve" id="Curve_ejw7t"]
+_data = [Vector2(0, 0), 0.0, 1.1375841, 0, 1, Vector2(0.43354434, 0.49319315), 0.0, 0.0, 0, 0, Vector2(0.5379747, 1), 0.0, 0.0, 0, 0, Vector2(0.74367094, 0.7827971), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.84735966, 0.0, 1, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_pbs2x"]
+curve = SubResource("Curve_ejw7t")
+
+[sub_resource type="Resource" id="Resource_d653j"]
+script = ExtResource("7_al7lr")
+shapeScaleRange = 0.5
+radialFillTexture = SubResource("GradientTexture1D_47l5e")
+radialFillTile = 40.0
+radialFillOffset = 0.0
+radialFillRepeat = true
+conicFillTexture = SubResource("NoiseTexture2D_f4uxw")
+conicFillTile = 4.0
+conicFillOffset = 0.0
+conicFillRepeat = true
+radialMaskTexture = SubResource("CurveTexture_pbs2x")
+radialMaskTile = 5.0
+radialMaskOffset = 0.0
+radialMaskRepeat = true
+conicMaskTexture = SubResource("NoiseTexture2D_1jwyb")
+conicMaskRepeat = true
+metadata/_custom_type_script = "uid://dk8t1ljh3jroo"
+
+[sub_resource type="Curve" id="Curve_n18bq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 1, Vector2(1, 1), 0.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_u8rfd"]
+curve = SubResource("Curve_n18bq")
+
+[sub_resource type="Resource" id="Resource_hwkd6"]
+script = ExtResource("5_hwkd6")
+layerName = "Rainbow God Rays"
+opacity = 0.02
+flareType = SubResource("Resource_d653j")
+overwriteColor = Color(2.6456428, 2.304777, 2.0085642, 1)
+overwriteAmount = 0.74
+opacityCurvePerLayer = SubResource("CurveTexture_u8rfd")
+size = 200.0
+rotationOverX = 60.0588
+rotationPerLayer = 90.0
+fading = SubResource("Resource_lwfhk")
+metadata/_custom_type_script = "uid://u3g0mlwlpd6s"
+
+[sub_resource type="Resource" id="Resource_tulaj"]
+script = ExtResource("11_qfhxx")
+zOffset = 0.5735
+toSize = 0.0
+
+[resource]
+script = ExtResource("12_0j7hl")
+mainColor = Color(5.1105056, 0.45910248, 0, 1)
+opacity = 0.0
+scale = 0.423
+layers = [SubResource("Resource_nuxa8"), SubResource("Resource_8vqmt"), SubResource("Resource_54d3y"), SubResource("Resource_0p0lr"), SubResource("Resource_yr3fk"), SubResource("Resource_hwkd6")]
+fading = SubResource("Resource_g52pi")
+chromaticAberation = SubResource("Resource_dcmnq")
+occlusion = SubResource("Resource_tulaj")
+metadata/_custom_type_script = "uid://bh37fg1dnc37s"
