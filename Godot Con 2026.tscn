@@ -132,7 +132,7 @@ effect_callback_type = 4
 needs_motion_vectors = false
 needs_normal_roughness = false
 script = ExtResource("2_rggnn")
-fadePosition = 0.3447
+fadePosition = 0.3394
 fadeInOffset = 0.0505
 fadeOutOffset = 0.263
 ellipseToCircle = 0.9574
@@ -1045,7 +1045,7 @@ script = ExtResource("5_f60al")
 owner = SubResource("Resource_geea8")
 layer = ExtResource("13_1h2nm")
 
-[sub_resource type="CompositorEffect" id="CompositorEffect_7jx0u"]
+[sub_resource type="CompositorEffect" id="CompositorEffect_ws6cn"]
 resource_local_to_scene = false
 resource_name = ""
 enabled = true
@@ -1081,7 +1081,7 @@ script = ExtResource("5_f60al")
 owner = SubResource("Resource_geea8")
 layer = ExtResource("13_1h2nm")
 
-[sub_resource type="CompositorEffect" id="CompositorEffect_udnlj"]
+[sub_resource type="CompositorEffect" id="CompositorEffect_2lpe4"]
 resource_local_to_scene = false
 resource_name = ""
 enabled = true
@@ -1114,7 +1114,7 @@ metadata/_custom_type_script = "uid://6jkixa201wux"
 
 [sub_resource type="Resource" id="Resource_d1q3q"]
 script = ExtResource("52_tl24h")
-effects = [SubResource("CompositorEffect_7jx0u"), SubResource("CompositorEffect_udnlj")]
+effects = [SubResource("CompositorEffect_ws6cn"), SubResource("CompositorEffect_2lpe4")]
 metadata/_custom_type_script = "uid://ckixweetchlo0"
 
 [sub_resource type="Resource" id="Resource_fykt2"]

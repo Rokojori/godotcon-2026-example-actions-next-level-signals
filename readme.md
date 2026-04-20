@@ -1,4 +1,4 @@
-# Project Title
+# Actions: Next-Level-Signals
 
 ![Project Banner](godot-con-2026-next-level-signals-rokojori-action-library-presentation-cover.jpg)
 
