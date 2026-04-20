@@ -77,6 +77,10 @@ ssao_horizon = 0.11
 ssao_sharpness = 1.0
 ssao_light_affect = 1.0
 ssao_ao_channel_affect = 1.0
+ssil_enabled = true
+ssil_radius = 1.88
+ssil_intensity = 16.0
+ssil_sharpness = 1.0
 glow_enabled = true
 glow_levels/1 = 16.0
 glow_levels/2 = 2.59
@@ -88,10 +92,13 @@ glow_intensity = 1.83
 glow_strength = 1.22
 glow_blend_mode = 4
 fog_enabled = true
-fog_light_color = Color(0.3166403, 0.3671382, 0.4456907, 1)
+fog_light_color = Color(0.3190534, 0.38864824, 0.5, 1)
+fog_sun_scatter = 0.01
+fog_density = 0.007
+fog_height = 0.5
 adjustment_enabled = true
 adjustment_contrast = 0.9
-adjustment_saturation = 1.2
+adjustment_saturation = 1.1
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_gc2ks"]
 
@@ -148,7 +155,7 @@ size = Vector2(1000, 1000)
 
 [sub_resource type="Gradient" id="Gradient_37xqx"]
 offsets = PackedFloat32Array(0.97938144, 1)
-colors = PackedColorArray(0.12712638, 0.17148876, 0.20129895, 1, 0.45247936, 0.45247936, 0.45247936, 1)
+colors = PackedColorArray(0.21253063, 0.31544045, 0.38459277, 1, 0.45247936, 0.45247936, 0.45247936, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ir4gp"]
 gradient = SubResource("Gradient_37xqx")
@@ -203,7 +210,7 @@ bump_strength = 14.6
 
 [sub_resource type="Gradient" id="Gradient_ir4gp"]
 offsets = PackedFloat32Array(0.5395189, 0.9656357, 1)
-colors = PackedColorArray(0.16056699, 0.15948132, 0.15948132, 1, 0.37101543, 0.37101543, 0.37101543, 1, 1, 1, 1, 1)
+colors = PackedColorArray(0.14, 0.1386, 0.1386, 1, 0.37101543, 0.37101543, 0.37101543, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1h2nm"]
 gradient = SubResource("Gradient_ir4gp")
@@ -216,7 +223,7 @@ fill_to = Vector2(1, 0.5)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_802yv"]
 albedo_color = Color(0.62488157, 0.6231121, 0.6357732, 1)
 albedo_texture = SubResource("GradientTexture2D_ir4gp")
-metallic = 0.11
+metallic = 0.12
 metallic_specular = 0.25
 roughness_texture = SubResource("GradientTexture2D_1h2nm")
 normal_enabled = true
@@ -260,12 +267,14 @@ noise = SubResource("FastNoiseLite_37xqx")
 seamless = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rovp1"]
-albedo_color = Color(0.8122784, 0.20314468, 0.23703761, 1)
+albedo_color = Color(0.86658764, 0.21672702, 0.2258523, 1)
 metallic = 0.72
 metallic_specular = 0.65
 roughness_texture = SubResource("NoiseTexture2D_ir4gp")
 normal_enabled = true
 normal_texture = SubResource("NoiseTexture2D_37xqx")
+rim_enabled = true
+rim_tint = 0.0
 ao_enabled = true
 subsurf_scatter_enabled = true
 subsurf_scatter_strength = 1.0
@@ -273,7 +282,7 @@ subsurf_scatter_transmittance_enabled = true
 subsurf_scatter_transmittance_depth = 4.074
 subsurf_scatter_transmittance_boost = 0.15
 backlight_enabled = true
-backlight = Color(0.42532474, 0.24085087, 0.04203598, 1)
+backlight = Color(1, 0.76, 0.76, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_x2ntx"]
 
@@ -294,6 +303,7 @@ albedo_color = Color(2.4246898, 0, 0, 0)
 albedo_texture = SubResource("GradientTexture2D_fcl2o")
 billboard_mode = 1
 billboard_keep_scale = true
+proximity_fade_enabled = true
 
 [sub_resource type="Gradient" id="Gradient_4e8bw"]
 offsets = PackedFloat32Array(0.75555557, 0.8055556)
@@ -412,7 +422,7 @@ billboard_keep_scale = true
 
 [sub_resource type="Gradient" id="Gradient_aqpfh"]
 offsets = PackedFloat32Array(0.0028735632, 0.03735632, 0.17528735, 0.5344828, 1)
-colors = PackedColorArray(0.31670618, 0.056294765, 0.09362639, 1, 18.892157, 13.943095, 2.2353005, 1, 3.2751656, 0.24845618, 0, 1, 0.65968734, 0.108666964, 0.17303891, 1, 0.24203093, 0.24203093, 0.24203093, 1)
+colors = PackedColorArray(0.31670618, 0.056294765, 0.09362639, 1, 18.892157, 13.943095, 2.2353005, 1, 3.2751656, 0.24845618, 0, 1, 1.2189852, 0.23115669, 0.34640348, 1, 0.24203093, 0.24203093, 0.24203093, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ipngd"]
 gradient = SubResource("Gradient_aqpfh")
@@ -990,6 +1000,8 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_0g18k"]
 gradient = SubResource("Gradient_ttr13")
+width = 32
+height = 32
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
@@ -1002,10 +1014,11 @@ albedo_color = Color(1.353256, 0, 0, 0.08627451)
 albedo_texture = SubResource("GradientTexture2D_0g18k")
 billboard_mode = 1
 billboard_keep_scale = true
+proximity_fade_enabled = true
 
 [sub_resource type="Curve" id="Curve_7jx0u"]
-_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
-point_count = 2
+_data = [Vector2(0, 0), 0.0, 1.5980222, 0, 1, Vector2(0.49230772, 0.7867187), 0.70416665, 0.70416665, 0, 0, Vector2(1, 1), 0.4200995, 0.0, 1, 0]
+point_count = 3
 
 [sub_resource type="Resource" id="Resource_udnlj"]
 script = ExtResource("44_78ruu")
@@ -1174,7 +1187,7 @@ mesh = SubResource("CapsuleMesh_1h2nm")
 surface_material_override/0 = SubResource("StandardMaterial3D_rovp1")
 
 [node name="Red Glow" type="MeshInstance3D" parent="Enemy/Graphics"]
-transform = Transform3D(189.5417, 0, 0, 0, 2.3508928, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(25, 0, 0, 0, 2.6499, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("QuadMesh_x2ntx")
 surface_material_override/0 = SubResource("StandardMaterial3D_6edtt")
 
