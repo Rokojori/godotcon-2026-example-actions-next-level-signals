@@ -17,6 +17,6 @@ Learn more on the official website:
 
 Here’s a short video of the VFX:
 
-![Watch the video](https://rokojori.com/_media/rokojori-action-library/rokojori-action-library-godot-con-examples.mp4)
+[Watch the video](https://rokojori.com/_media/rokojori-action-library/rokojori-action-library-godot-con-examples.mp4)
 
 This video shows two of the OnHit impact FX chains
